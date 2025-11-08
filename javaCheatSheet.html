@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Java Cheat Sheet for Beginners</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        padding: 20px;
+        line-height: 1.6;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        background: white;
+        border-radius: 15px;
+        padding: 30px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      }
+
+      h1 {
+        color: #667eea;
+        text-align: center;
+        margin-bottom: 10px;
+        font-size: 2.5em;
+      }
+
+      .subtitle {
+        text-align: center;
+        color: #666;
+        margin-bottom: 30px;
+        font-style: italic;
+      }
+
+      h2 {
+        color: #764ba2;
+        margin-top: 30px;
+        margin-bottom: 15px;
+        padding-bottom: 10px;
+        border-bottom: 3px solid #667eea;
+      }
+
+      h3 {
+        color: #5a67d8;
+        margin-top: 20px;
+        margin-bottom: 10px;
+      }
+
+      .section {
+        margin-bottom: 25px;
+        background: #f7fafc;
+        padding: 20px;
+        border-radius: 10px;
+        border-left: 5px solid #667eea;
+      }
+
+      code {
+        background: #2d3748;
+        color: #68d391;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-family: "Courier New", monospace;
+        font-size: 0.95em;
+      }
+
+      pre {
+        background: #2d3748;
+        color: #e2e8f0;
+        padding: 15px;
+        border-radius: 8px;
+        overflow-x: auto;
+        margin: 10px 0;
+        border-left: 4px solid #68d391;
+      }
+
+      pre code {
+        background: none;
+        padding: 0;
+        color: #e2e8f0;
+      }
+
+      .note {
+        background: #fef5e7;
+        border-left: 5px solid #f39c12;
+        padding: 15px;
+        margin: 15px 0;
+        border-radius: 5px;
+      }
+
+      .note strong {
+        color: #d68910;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 15px 0;
+      }
+
+      th,
+      td {
+        padding: 12px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+      }
+
+      th {
+        background: #667eea;
+        color: white;
+      }
+
+      tr:hover {
+        background: #f0f0f0;
+      }
+
+      .highlight {
+        background: #fff3cd;
+        padding: 2px 5px;
+        border-radius: 3px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>☕ Java Cheat Sheet</h1>
+      <p class="subtitle">A Beginner's Guide to Java Programming</p>
+
+      <div class="section">
+        <h2>📚 1. Basic Structure of a Java Program</h2>
+        <p>Every Java program needs a class and a main method to run:</p>
+        <pre><code>public class MyFirstProgram {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}</code></pre>
+        <div class="note">
+          <strong>Note:</strong> The file name must match the class name (e.g.,
+          MyFirstProgram.java)
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>🔤 2. Variables and Data Types</h2>
+        <p>
+          Variables store data. Java has different types for different kinds of
+          data:
+        </p>
+
+        <h3>Primitive Data Types:</h3>
+        <table>
+          <tr>
+            <th>Type</th>
+            <th>What it stores</th>
+            <th>Example</th>
+          </tr>
+          <tr>
+            <td><code>int</code></td>
+            <td>Whole numbers</td>
+            <td><code>int age = 25;</code></td>
+          </tr>
+          <tr>
+            <td><code>double</code></td>
+            <td>Decimal numbers</td>
+            <td><code>double price = 19.99;</code></td>
+          </tr>
+          <tr>
+            <td><code>float</code></td>
+            <td>Decimal (less precise)</td>
+            <td><code>float temp = 98.6f;</code></td>
+          </tr>
+          <tr>
+            <td><code>char</code></td>
+            <td>Single character</td>
+            <td><code>char grade = 'A';</code></td>
+          </tr>
+          <tr>
+            <td><code>boolean</code></td>
+            <td>True or False</td>
+            <td><code>boolean isOpen = true;</code></td>
+          </tr>
+          <tr>
+            <td><code>String</code></td>
+            <td>Text (multiple characters)</td>
+            <td><code>String name = "John";</code></td>
+          </tr>
+        </table>
+
+        <h3>Declaring Variables:</h3>
+        <pre><code>int myNumber = 10;        // Integer
+double myDecimal = 5.5;   // Decimal
+String myText = "Hello";  // Text
+boolean myBoolean = true; // True/False</code></pre>
+      </div>
+
+      <div class="section">
+        <h2>➕ 3. Operators</h2>
+
+        <h3>Arithmetic Operators:</h3>
+        <pre><code>int a = 10, b = 3;
+int sum = a + b;      // Addition: 13
+int diff = a - b;     // Subtraction: 7
+int product = a * b;  // Multiplication: 30
+int quotient = a / b; // Division: 3
+int remainder = a % b;// Modulus (remainder): 1</code></pre>
+
+        <h3>Comparison Operators:</h3>
+        <pre><code>a == b  // Equal to
+a != b  // Not equal to
+a > b   // Greater than
+a < b   // Less than
+a >= b  // Greater than or equal to
+a <= b  // Less than or equal to</code></pre>
+
+        <h3>Logical Operators:</h3>
+        <pre><code>&&  // AND (both must be true)
+||  // OR (at least one must be true)
+!   // NOT (reverses true/false)</code></pre>
+      </div>
+
+      <div class="section">
+        <h2>🔀 4. Control Flow Statements</h2>
+
+        <h3>If-Else Statements:</h3>
+        <p>Make decisions in your code:</p>
+        <pre><code>int age = 18;
+
+if (age >= 18) {
+    System.out.println("You are an adult");
+} else if (age >= 13) {
+    System.out.println("You are a teenager");
+} else {
+    System.out.println("You are a child");
+}</code></pre>
+
+        <h3>Switch Statement:</h3>
+        <p>Choose between multiple options:</p>
+        <pre><code>int day = 3;
+
+switch (day) {
+    case 1:
+        System.out.println("Monday");
+        break;
+    case 2:
+        System.out.println("Tuesday");
+        break;
+    case 3:
+        System.out.println("Wednesday");
+        break;
+    default:
+        System.out.println("Other day");
+}</code></pre>
+      </div>
+
+      <div class="section">
+        <h2>🔁 5. Loops</h2>
+        <p>Repeat code multiple times:</p>
+
+        <h3>For Loop:</h3>
+        <p>When you know how many times to loop:</p>
+        <pre><code>for (int i = 0; i < 5; i++) {
+    System.out.println("Count: " + i);
+}
+// Prints: Count: 0, Count: 1, Count: 2, Count: 3, Count: 4</code></pre>
+
+        <h3>While Loop:</h3>
+        <p>Loop while a condition is true:</p>
+        <pre><code>int i = 0;
+while (i < 5) {
+    System.out.println("Count: " + i);
+    i++;
+}</code></pre>
+
+        <h3>Do-While Loop:</h3>
+        <p>Runs at least once, then checks condition:</p>
+        <pre><code>int i = 0;
+do {
+    System.out.println("Count: " + i);
+    i++;
+} while (i < 5);</code></pre>
+      </div>
+
+      <div class="section">
+        <h2>📦 6. Arrays</h2>
+        <p>Store multiple values in one variable:</p>
+
+        <h3>Creating Arrays:</h3>
+        <pre><code>// Method 1: Declare size first
+int[] numbers = new int[5];
+numbers[0] = 10;
+numbers[1] = 20;
+
+// Method 2: Initialize with values
+String[] fruits = {"Apple", "Banana", "Orange"};
+
+// Accessing elements
+System.out.println(fruits[0]); // Prints: Apple
+
+// Array length
+System.out.println(fruits.length); // Prints: 3</code></pre>
+
+        <h3>Looping Through Arrays:</h3>
+        <pre><code>String[] colors = {"Red", "Green", "Blue"};
+
+// For loop
+for (int i = 0; i < colors.length; i++) {
+    System.out.println(colors[i]);
+}
+
+// Enhanced for loop (for-each)
+for (String color : colors) {
+    System.out.println(color);
+}</code></pre>
+      </div>
+
+      <div class="section">
+        <h2>🔧 7. Methods (Functions)</h2>
+        <p>Reusable blocks of code:</p>
+
+        <pre><code>// Method that doesn't return anything
+public static void greet() {
+    System.out.println("Hello!");
+}
+
+// Method that returns a value
+public static int add(int a, int b) {
+    return a + b;
+}
+
+// Method with parameters
+public static void sayHello(String name) {
+    System.out.println("Hello, " + name + "!");
+}
+
+// Using methods
+greet();                    // Prints: Hello!
+int sum = add(5, 3);        // sum = 8
+sayHello("Alice");          // Prints: Hello, Alice!</code></pre>
+
+        <div class="note">
+          <strong>Note:</strong> <code>static</code> means the method belongs to
+          the class, not an object. <code>void</code> means it doesn't return a
+          value.
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>🏗️ 8. Classes and Objects</h2>
+        <p>Classes are blueprints; objects are instances of classes:</p>
+
+        <h3>Creating a Class:</h3>
+        <pre><code>public class Car {
+    // Properties (attributes)
+    String brand;
+    String color;
+    int year;
+    
+    // Constructor (creates objects)
+    public Car(String b, String c, int y) {
+        brand = b;
+        color = c;
+        year = y;
+    }
+    
+    // Method
+    public void drive() {
+        System.out.println("The " + color + " " + brand + " is driving!");
+    }
+}</code></pre>
+
+        <h3>Creating and Using Objects:</h3>
+        <pre><code>// Create objects
+Car myCar = new Car("Toyota", "Red", 2020);
+Car yourCar = new Car("Honda", "Blue", 2021);
+
+// Access properties
+System.out.println(myCar.brand);  // Prints: Toyota
+
+// Call methods
+myCar.drive();  // Prints: The Red Toyota is driving!</code></pre>
+      </div>
+
+      <div class="section">
+        <h2>📥 9. Input and Output</h2>
+
+        <h3>Output (Printing):</h3>
+        <pre><code>System.out.println("This prints with a new line");
+System.out.print("This prints without a new line");
+System.out.printf("Formatted: %d %s", 5, "text");</code></pre>
+
+        <h3>Input (Reading from user):</h3>
+        <pre><code>import java.util.Scanner;
+
+Scanner input = new Scanner(System.in);
+
+System.out.print("Enter your name: ");
+String name = input.nextLine();
+
+System.out.print("Enter your age: ");
+int age = input.nextInt();
+
+System.out.println("Hello " + name + ", you are " + age);
+
+input.close();  // Always close the Scanner!</code></pre>
+      </div>
+
+      <div class="section">
+        <h2>🎯 10. Common String Methods</h2>
+        <pre><code>String text = "Hello World";
+
+text.length()           // Returns: 11
+text.toUpperCase()      // Returns: "HELLO WORLD"
+text.toLowerCase()      // Returns: "hello world"
+text.charAt(0)          // Returns: 'H'
+text.substring(0, 5)    // Returns: "Hello"
+text.contains("World")  // Returns: true
+text.replace("World", "Java")  // Returns: "Hello Java"
+text.trim()             // Removes whitespace from ends
+text.equals("Hello")    // Compares strings (returns false)</code></pre>
+      </div>
+
+      <div class="section">
+        <h2>📋 11. Important Keywords</h2>
+        <table>
+          <tr>
+            <th>Keyword</th>
+            <th>What it does</th>
+          </tr>
+          <tr>
+            <td><code>public</code></td>
+            <td>Makes something accessible from anywhere</td>
+          </tr>
+          <tr>
+            <td><code>private</code></td>
+            <td>Makes something accessible only within its class</td>
+          </tr>
+          <tr>
+            <td><code>static</code></td>
+            <td>Belongs to the class, not objects</td>
+          </tr>
+          <tr>
+            <td><code>void</code></td>
+            <td>Method doesn't return a value</td>
+          </tr>
+          <tr>
+            <td><code>return</code></td>
+            <td>Sends a value back from a method</td>
+          </tr>
+          <tr>
+            <td><code>new</code></td>
+            <td>Creates a new object</td>
+          </tr>
+          <tr>
+            <td><code>this</code></td>
+            <td>Refers to the current object</td>
+          </tr>
+          <tr>
+            <td><code>final</code></td>
+            <td>Makes a variable constant (can't change)</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="section">
+        <h2>💡 12. Quick Tips for Beginners</h2>
+        <ul style="list-style-position: inside; line-height: 2">
+          <li>
+            Java is <span class="highlight">case-sensitive</span>:
+            <code>myVariable</code> and <code>myvariable</code> are different
+          </li>
+          <li>
+            Every statement ends with a
+            <span class="highlight">semicolon</span> (;)
+          </li>
+          <li>
+            Use meaningful variable names: <code>age</code> not <code>a</code>
+          </li>
+          <li>
+            Comments help explain your code:
+            <pre><code>// This is a single-line comment
+/* This is a
+   multi-line comment */</code></pre>
+          </li>
+          <li>Indentation makes code readable (use 4 spaces or Tab)</li>
+          <li>Always close resources like Scanner when done</li>
+        </ul>
+      </div>
+
+      <div class="note">
+        <strong>Remember:</strong> Programming is a skill that improves with
+        practice. Don't worry if things don't make sense immediately. Keep
+        coding, make mistakes, and learn from them! 🚀
+      </div>
+    </div>
+  </body>
+</html>

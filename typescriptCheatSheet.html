@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TypeScript Cheat Sheet for Beginners</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 20px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: #333;
+      }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 15px;
+        padding: 30px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      }
+      h1 {
+        text-align: center;
+        color: #2c3e50;
+        margin-bottom: 10px;
+        font-size: 2.5em;
+      }
+      .subtitle {
+        text-align: center;
+        color: #7f8c8d;
+        margin-bottom: 30px;
+        font-style: italic;
+      }
+      h2 {
+        color: #3498db;
+        border-bottom: 3px solid #3498db;
+        padding-bottom: 5px;
+        margin-top: 40px;
+      }
+      h3 {
+        color: #e74c3c;
+        margin-top: 25px;
+      }
+      .code-block {
+        background: #2c3e50;
+        color: #ecf0f1;
+        padding: 15px;
+        border-radius: 8px;
+        margin: 10px 0;
+        overflow-x: auto;
+        font-family: "Courier New", monospace;
+        position: relative;
+      }
+      .code-block::before {
+        content: "TypeScript";
+        position: absolute;
+        top: 5px;
+        right: 10px;
+        font-size: 12px;
+        color: #95a5a6;
+      }
+      .explanation {
+        background: #f8f9fa;
+        border-left: 4px solid #17a2b8;
+        padding: 15px;
+        margin: 10px 0;
+        border-radius: 0 8px 8px 0;
+      }
+      .tip {
+        background: #d4edda;
+        border-left: 4px solid #28a745;
+        padding: 15px;
+        margin: 10px 0;
+        border-radius: 0 8px 8px 0;
+      }
+      .warning {
+        background: #fff3cd;
+        border-left: 4px solid #ffc107;
+        padding: 15px;
+        margin: 10px 0;
+        border-radius: 0 8px 8px 0;
+      }
+      .section {
+        margin-bottom: 40px;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+        margin-top: 20px;
+      }
+      .card {
+        background: white;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        border-top: 4px solid #3498db;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>TypeScript Cheat Sheet</h1>
+      <p class="subtitle">Your complete beginner's guide to TypeScript</p>
+
+      <div class="section">
+        <h2>🚀 What is TypeScript?</h2>
+        <div class="explanation">
+          <strong>TypeScript is JavaScript with types!</strong> It's like
+          JavaScript's smarter sibling that helps catch errors before your code
+          runs. Think of it as JavaScript with a safety net that prevents common
+          mistakes.
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>📝 Basic Types</h2>
+
+        <h3>Primitive Types</h3>
+        <div class="code-block">
+          // String - for text let name: string = "Alice"; let message: string =
+          `Hello, ${name}!`; // Template literals work too! // Number - for all
+          numbers (integers and decimals) let age: number = 25; let price:
+          number = 19.99; // Boolean - for true/false let isStudent: boolean =
+          true; let hasJob: boolean = false; // Any - avoid this! It defeats the
+          purpose of TypeScript let anything: any = "Could be anything"; // Try
+          not to use this
+        </div>
+        <div class="explanation">
+          <strong>What this means:</strong> By adding ": type" after a variable
+          name, you're telling TypeScript what kind of data that variable should
+          hold. If you try to put the wrong type, TypeScript will warn you!
+        </div>
+
+        <h3>Arrays</h3>
+        <div class="code-block">
+          // Array of strings let fruits: string[] = ["apple", "banana",
+          "orange"]; let colors: Array&lt;string&gt; = ["red", "green", "blue"];
+          // Alternative syntax // Array of numbers let scores: number[] = [85,
+          92, 78, 96]; // Mixed arrays (try to avoid these) let mixed: (string |
+          number)[] = ["hello", 42, "world"];
+        </div>
+        <div class="explanation">
+          <strong>Arrays hold multiple values of the same type.</strong> The []
+          syntax tells TypeScript "this is an array of [type]".
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>🔧 Functions</h2>
+
+        <div class="code-block">
+          // Basic function with typed parameters and return type function
+          greet(name: string): string { return `Hello, ${name}!`; } // Function
+          with multiple parameters function add(a: number, b: number): number {
+          return a + b; } // Function with optional parameter (notice the ?)
+          function introduce(name: string, age?: number): string { if (age) {
+          return `Hi, I'm ${name} and I'm ${age} years old.`; } return `Hi, I'm
+          ${name}.`; } // Arrow function const multiply = (x: number, y:
+          number): number => x * y; // Function that doesn't return anything
+          (void) function logMessage(message: string): void {
+          console.log(message); }
+        </div>
+        <div class="explanation">
+          <strong>Function typing:</strong> You specify types for parameters
+          (what goes in) and the return type (what comes out). The "?" makes a
+          parameter optional.
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>🏗️ Objects and Interfaces</h2>
+
+        <h3>Object Types</h3>
+        <div class="code-block">
+          // Simple object type let person: { name: string; age: number } = {
+          name: "John", age: 30 }; // Object with optional property let user: {
+          username: string; email: string; isActive?: boolean; // Optional } = {
+          username: "johndoe", email: "john@example.com" // isActive is
+          optional, so we don't need to include it };
+        </div>
+
+        <h3>Interfaces (Reusable Object Types)</h3>
+        <div class="code-block">
+          // Define an interface (like a blueprint for objects) interface
+          Student { name: string; age: number; grade: string; subjects:
+          string[]; isEnrolled?: boolean; // Optional property } // Use the
+          interface let student1: Student = { name: "Emma", age: 16, grade:
+          "10th", subjects: ["Math", "Science", "English"] }; // Function using
+          interface function printStudentInfo(student: Student): void {
+          console.log(`${student.name} is in ${student.grade} grade`); }
+        </div>
+        <div class="explanation">
+          <strong>Interfaces are like templates</strong> that define what
+          properties an object should have. They're reusable and make your code
+          more organized and readable.
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>🎯 Union Types and Literals</h2>
+
+        <div class="code-block">
+          // Union types - a variable can be one of several types let id: string
+          | number; id = "ABC123"; // Valid id = 12345; // Also valid // Literal
+          types - exact values let direction: "up" | "down" | "left" | "right";
+          direction = "up"; // Valid // direction = "diagonal"; // Error! Not
+          one of the allowed values // Combining with interfaces interface Car {
+          brand: string; model: string; year: number; fuelType: "gasoline" |
+          "diesel" | "electric" | "hybrid"; } let myCar: Car = { brand:
+          "Toyota", model: "Prius", year: 2023, fuelType: "hybrid" };
+        </div>
+        <div class="explanation">
+          <strong>Union types (|):</strong> Let a variable be one of several
+          types. <strong>Literal types:</strong> Restrict values to specific
+          options, like a dropdown menu in code!
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>🎪 Classes</h2>
+
+        <div class="code-block">
+          // Basic class class Animal { name: string; species: string; //
+          Constructor - runs when you create a new Animal constructor(name:
+          string, species: string) { this.name = name; this.species = species; }
+          // Method (function inside a class) makeSound(): void {
+          console.log(`${this.name} makes a sound!`); } // Method with return
+          value getInfo(): string { return `${this.name} is a ${this.species}`;
+          } } // Create an instance (object) of the class let myPet = new
+          Animal("Buddy", "Dog"); myPet.makeSound(); // "Buddy makes a sound!"
+          // Class with inheritance class Dog extends Animal { breed: string;
+          constructor(name: string, breed: string) { super(name, "Dog"); // Call
+          parent constructor this.breed = breed; } // Override parent method
+          makeSound(): void { console.log(`${this.name} barks!`); } // New
+          method specific to Dog wagTail(): void { console.log(`${this.name}
+          wags tail happily!`); } } let myDog = new Dog("Rex", "Golden
+          Retriever"); myDog.makeSound(); // "Rex barks!" myDog.wagTail(); //
+          "Rex wags tail happily!"
+        </div>
+        <div class="explanation">
+          <strong>Classes are blueprints for creating objects.</strong> Think of
+          them like cookie cutters - the class is the cutter, and each object
+          you create is a cookie. Inheritance lets you create specialized
+          versions of classes.
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>🔄 Generics (Advanced but Useful)</h2>
+
+        <div class="code-block">
+          // Generic function - works with any type function
+          getFirstItem&lt;T&gt;(items: T[]): T | undefined { return items[0]; }
+          // Usage let firstNumber = getFirstItem([1, 2, 3]); // TypeScript
+          knows this is number let firstName = getFirstItem(["a", "b", "c"]); //
+          TypeScript knows this is string // Generic interface interface
+          Container&lt;T&gt; { value: T; getValue(): T; } let numberContainer:
+          Container&lt;number&gt; = { value: 42, getValue() { return this.value;
+          } }; let stringContainer: Container&lt;string&gt; = { value: "Hello
+          World", getValue() { return this.value; } };
+        </div>
+        <div class="explanation">
+          <strong>Generics are like placeholders for types.</strong> The
+          &lt;T&gt; means "any type" - it's filled in when you use the function
+          or interface. This lets you write flexible, reusable code that still
+          maintains type safety.
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>⚠️ Type Assertions and Guards</h2>
+
+        <div class="code-block">
+          // Type assertion - when you know more than TypeScript let someValue:
+          unknown = "Hello World"; let strLength: number = (someValue as
+          string).length; // Type guards - checking types at runtime function
+          isString(value: any): value is string { return typeof value ===
+          "string"; } function processValue(value: string | number) { if
+          (isString(value)) { // TypeScript now knows value is a string
+          console.log(value.toUpperCase()); } else { // TypeScript knows value
+          is a number console.log(value.toFixed(2)); } } // Using typeof
+          function handleInput(input: string | number) { if (typeof input ===
+          "string") { console.log(`String: ${input.toLowerCase()}`); } else {
+          console.log(`Number: ${input * 2}`); } }
+        </div>
+        <div class="warning">
+          <strong>Be careful with type assertions!</strong> Use them only when
+          you're absolutely sure about the type. Type guards are safer because
+          they check at runtime.
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>🛠️ Utility Types (Super Helpful!)</h2>
+
+        <div class="code-block">
+          // Original interface interface User { id: number; name: string;
+          email: string; password: string; } // Partial - makes all properties
+          optional type UserUpdate = Partial&lt;User&gt;; let update: UserUpdate
+          = { name: "New Name" }; // Only updating name // Pick - select only
+          certain properties type PublicUser = Pick&lt;User, "id" | "name" |
+          "email"&gt;; let publicUser: PublicUser = { id: 1, name: "John",
+          email: "john@email.com" // No password - it's not included in Pick };
+          // Omit - exclude certain properties type UserWithoutPassword =
+          Omit&lt;User, "password"&gt;; // Required - makes all properties
+          required type RequiredUser = Required&lt;User&gt;; // Record - create
+          object type with specific keys and values type Grades =
+          Record&lt;"math" | "science" | "english", number&gt;; let
+          studentGrades: Grades = { math: 95, science: 87, english: 92 };
+        </div>
+        <div class="tip">
+          <strong>Utility types save you time!</strong> Instead of rewriting
+          interfaces, you can transform existing ones. Very handy for APIs and
+          database operations.
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>💡 Best Practices for Beginners</h2>
+
+        <div class="grid">
+          <div class="card">
+            <h3>✅ Do This</h3>
+            <ul>
+              <li>Always specify types for function parameters</li>
+              <li>Use interfaces for object shapes</li>
+              <li>Enable strict mode in tsconfig.json</li>
+              <li>Use meaningful variable names</li>
+              <li>Prefer union types over 'any'</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>❌ Avoid This</h3>
+            <ul>
+              <li>Using 'any' everywhere (defeats the purpose!)</li>
+              <li>Ignoring TypeScript errors</li>
+              <li>Complex nested types when starting</li>
+              <li>Type assertions without being sure</li>
+              <li>Mixing JavaScript and TypeScript randomly</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>🏁 Quick Reference</h2>
+
+        <div class="code-block">
+          // Variables let name: string = "Alice"; let age: number = 25; let
+          isActive: boolean = true; let items: string[] = ["a", "b", "c"]; //
+          Functions function greet(name: string): string { return `Hello,
+          ${name}!`; } // Interfaces interface Person { name: string; age:
+          number; } // Classes class Student { constructor(public name: string,
+          public grade: number) {} } // Union Types let value: string | number =
+          "hello"; // Optional Properties interface Config { host: string;
+          port?: number; // Optional }
+        </div>
+      </div>
+
+      <div class="tip">
+        <strong>Remember:</strong> TypeScript is here to help you write better
+        code! Start simple, and gradually add more advanced features as you get
+        comfortable. The goal is to catch errors early and make your code more
+        maintainable.
+      </div>
+
+      <div style="text-align: center; margin-top: 40px; color: #7f8c8d">
+        <p><em>Happy coding with TypeScript! 🎉</em></p>
+      </div>
+    </div>
+  </body>
+</html>

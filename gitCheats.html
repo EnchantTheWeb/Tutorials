@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Git & GitHub Cheat Sheet for Beginners</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        padding: 20px;
+        line-height: 1.6;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        overflow: hidden;
+      }
+
+      header {
+        background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+        color: white;
+        padding: 40px;
+        text-align: center;
+      }
+
+      h1 {
+        font-size: 2.5em;
+        margin-bottom: 10px;
+      }
+
+      .subtitle {
+        font-size: 1.2em;
+        opacity: 0.9;
+      }
+
+      .content {
+        padding: 40px;
+      }
+
+      .section {
+        margin-bottom: 40px;
+        border-left: 4px solid #667eea;
+        padding-left: 20px;
+      }
+
+      h2 {
+        color: #2d3748;
+        font-size: 1.8em;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+      }
+
+      .emoji {
+        margin-right: 10px;
+      }
+
+      .command-block {
+        background: #f7fafc;
+        border-radius: 8px;
+        padding: 20px;
+        margin-bottom: 15px;
+        border: 2px solid #e2e8f0;
+        transition: transform 0.2s, box-shadow 0.2s;
+      }
+
+      .command-block:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+
+      .command {
+        background: #2d3748;
+        color: #68d391;
+        padding: 10px 15px;
+        border-radius: 5px;
+        font-family: "Courier New", monospace;
+        font-size: 1em;
+        display: inline-block;
+        margin-bottom: 10px;
+      }
+
+      .description {
+        color: #4a5568;
+        margin-bottom: 8px;
+      }
+
+      .note {
+        background: #fef5e7;
+        border-left: 4px solid #f39c12;
+        padding: 10px;
+        margin-top: 8px;
+        border-radius: 4px;
+        font-size: 0.95em;
+      }
+
+      .tip {
+        background: #e8f5e9;
+        border-left: 4px solid #4caf50;
+        padding: 10px;
+        margin-top: 8px;
+        border-radius: 4px;
+        font-size: 0.95em;
+      }
+
+      .warning {
+        background: #ffebee;
+        border-left: 4px solid #f44336;
+        padding: 10px;
+        margin-top: 8px;
+        border-radius: 4px;
+        font-size: 0.95em;
+      }
+
+      footer {
+        background: #f7fafc;
+        padding: 20px;
+        text-align: center;
+        color: #4a5568;
+        border-top: 2px solid #e2e8f0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>🚀 Git & GitHub Cheat Sheet</h1>
+        <p class="subtitle">A Beginner-Friendly Guide to Version Control</p>
+      </header>
+
+      <div class="content">
+        <!-- Setup Section -->
+        <div class="section">
+          <h2><span class="emoji">⚙️</span>Initial Setup</h2>
+
+          <div class="command-block">
+            <div class="command">git config --global user.name "Your Name"</div>
+            <div class="description">
+              Sets your name that will appear on your commits (saves to your
+              code)
+            </div>
+            <div class="note">
+              <strong>Note:</strong> Replace "Your Name" with your actual name
+              in quotes
+            </div>
+          </div>
+
+          <div class="command-block">
+            <div class="command">
+              git config --global user.email "your.email@example.com"
+            </div>
+            <div class="description">
+              Sets your email that will appear on your commits
+            </div>
+            <div class="tip">
+              <strong>Tip:</strong> Use the same email as your GitHub account
+            </div>
+          </div>
+
+          <div class="command-block">
+            <div class="command">git config --list</div>
+            <div class="description">
+              Shows all your Git configuration settings
+            </div>
+          </div>
+        </div>
+
+        <!-- Starting a Project -->
+        <div class="section">
+          <h2><span class="emoji">🆕</span>Starting a New Project</h2>
+
+          <div class="command-block">
+            <div class="command">git init</div>
+            <div class="description">
+              Creates a new Git repository in your current folder
+            </div>
+            <div class="note">
+              <strong>What it does:</strong> This tells Git to start tracking
+              changes in this folder. Think of it as saying "Git, please watch
+              this folder for me!"
+            </div>
+          </div>
+
+          <div class="command-block">
+            <div class="command">
+              git clone https://github.com/username/repository.git
+            </div>
+            <div class="description">
+              Downloads a copy of an existing project from GitHub to your
+              computer
+            </div>
+            <div class="tip">
+              <strong>Tip:</strong> Replace the URL with the actual repository
+              URL you want to copy
+            </div>
+          </div>
+        </div>
+
+        <!-- Basic Commands -->
+        <div class="section">
+          <h2><span class="emoji">📝</span>Basic Daily Commands</h2>
+
+          <div class="command-block">
+            <div class="command">git status</div>
+            <div class="description">
+              Shows what files have changed and what's ready to be saved
+            </div>
+            <div class="tip">
+              <strong>Best Practice:</strong> Use this often! It's like checking
+              your to-do list
+            </div>
+          </div>
+
+          <div class="command-block">
+            <div class="command">git add filename.txt</div>
+            <div class="description">
+              Prepares a specific file to be saved (stages it)
+            </div>
+            <div class="note">
+              <strong>Think of it as:</strong> Putting items in your shopping
+              cart before checkout
+            </div>
+          </div>
+
+          <div class="command-block">
+            <div class="command">git add .</div>
+            <div class="description">
+              Prepares ALL changed files to be saved at once
+            </div>
+            <div class="warning">
+              <strong>Warning:</strong> Make sure you want to add everything
+              before using this!
+            </div>
+          </div>
+
+          <div class="command-block">
+            <div class="command">git commit -m "Your message here"</div>
+            <div class="description">
+              Saves your changes with a description of what you did
+            </div>
+            <div class="tip">
+              <strong>Good commit messages:</strong> "Fix login bug" or "Add
+              contact page" (be specific!)
+            </div>
+          </div>
+
+          <div class="command-block">
+            <div class="command">git push</div>
+            <div class="description">
+              Uploads your saved changes to GitHub (or another remote server)
+            </div>
+            <div class="note">
+              <strong>Think of it as:</strong> Backing up your work to the cloud
+            </div>
+          </div>
+
+          <div class="command-block">
+            <div class="command">git pull</div>
+            <div class="description">
+              Downloads the latest changes from GitHub to your computer
+            </div>
+            <div class="tip">
+              <strong>Use this:</strong> Before starting work each day to get
+              the latest updates
+            </div>
+          </div>
+        </div>
+
+        <!-- Branching -->
+        <div class="section">
+          <h2>
+            <span class="emoji">🌿</span>Branching (Working on Different
+            Versions)
+          </h2>
+
+          <div class="command-block">
+            <div class="command">git branch</div>
+            <div class="description">
+              Lists all branches (versions) of your project
+            </div>
+            <div class="note">
+              <strong>What's a branch?</strong> It's like a parallel universe
+              where you can make changes without affecting the main project
+            </div>
+          </div>
+
+          <div class="command-block">
+            <div class="command">git branch new-feature</div>
+            <div class="description">
+              Creates a new branch called "new-feature"
+            </div>
+          </div>
+
+          <div class="command-block">
+            <div class="command">git checkout new-feature</div>
+            <div class="description">Switches to the "new-feature" branch</div>
+            <div class="tip">
+              <strong>Tip:</strong> Now you're working in that branch, so
+              changes won't affect the main code
+            </div>
+          </div>
+
+          <div class="command-block">
+            <div class="command">git checkout -b another-feature</div>
+            <div class="description">
+              Creates AND switches to a new branch in one command
+            </div>
+            <div class="tip">
+              <strong>Shortcut:</strong> This combines creating and switching
+              branches!
+            </div>
+          </div>
+
+          <div class="command-block">
+            <div class="command">git merge new-feature</div>
+            <div class="description">
+              Combines the "new-feature" branch into your current branch
+            </div>
+            <div class="note">
+              <strong>When to use:</strong> After you've tested your changes and
+              want to add them to the main project
+            </div>
+          </div>
+
+          <div class="command-block">
+            <div class="command">git branch -d new-feature</div>
+            <div class="description">
+              Deletes the "new-feature" branch after you're done with it
+            </div>
+            <div class="warning">
+              <strong>Warning:</strong> Only delete branches you don't need
+              anymore!
+            </div>
+          </div>
+        </div>
+
+        <!-- Viewing History -->
+        <div class="section">
+          <h2><span class="emoji">📜</span>Viewing History</h2>
+
+          <div class="command-block">
+            <div class="command">git log</div>
+            <div class="description">
+              Shows a list of all previous saves (commits) with details
+            </div>
+            <div class="tip">
+              <strong>Tip:</strong> Press 'q' to exit this view
+            </div>
+          </div>
+
+          <div class="command-block">
+            <div class="command">git log --oneline</div>
+            <div class="description">
+              Shows a simplified, one-line version of your commit history
+            </div>
+            <div class="note">
+              <strong>Easier to read:</strong> Great for getting a quick
+              overview
+            </div>
+          </div>
+
+          <div class="command-block">
+            <div class="command">git diff</div>
+            <div class="description">
+              Shows exactly what changed in your files (line by line)
+            </div>
+          </div>
+        </div>
+
+        <!-- Undoing Changes -->
+        <div class="section">
+          <h2><span class="emoji">↩️</span>Undoing Changes</h2>
+
+          <div class="command-block">
+            <div class="command">git restore filename.txt</div>
+            <div class="description">
+              Discards changes you made to a file (reverts to last saved
+              version)
+            </div>
+            <div class="warning">
+              <strong>Warning:</strong> This permanently removes your unsaved
+              changes!
+            </div>
+          </div>
+
+          <div class="command-block">
+            <div class="command">git restore --staged filename.txt</div>
+            <div class="description">
+              Removes a file from the staging area (undoes 'git add')
+            </div>
+            <div class="note">
+              <strong>What it does:</strong> Takes the file out of your
+              "shopping cart" but keeps your changes
+            </div>
+          </div>
+
+          <div class="command-block">
+            <div class="command">git reset HEAD~1</div>
+            <div class="description">
+              Undoes your last commit but keeps the changes in your files
+            </div>
+            <div class="tip">
+              <strong>Use this when:</strong> You committed too early and want
+              to add more changes
+            </div>
+          </div>
+        </div>
+
+        <!-- Remote Repositories -->
+        <div class="section">
+          <h2>
+            <span class="emoji">☁️</span>Working with GitHub (Remote
+            Repositories)
+          </h2>
+
+          <div class="command-block">
+            <div class="command">
+              git remote add origin https://github.com/username/repo.git
+            </div>
+            <div class="description">
+              Connects your local project to a GitHub repository
+            </div>
+            <div class="note">
+              <strong>"origin"</strong> is just a nickname for the GitHub URL -
+              it's the default name everyone uses
+            </div>
+          </div>
+
+          <div class="command-block">
+            <div class="command">git remote -v</div>
+            <div class="description">
+              Shows which GitHub repositories your project is connected to
+            </div>
+          </div>
+
+          <div class="command-block">
+            <div class="command">git push -u origin main</div>
+            <div class="description">
+              Uploads your "main" branch to GitHub for the first time
+            </div>
+            <div class="tip">
+              <strong>The -u flag:</strong> Sets up tracking so next time you
+              can just type 'git push'
+            </div>
+          </div>
+
+          <div class="command-block">
+            <div class="command">git fetch</div>
+            <div class="description">
+              Downloads changes from GitHub but doesn't apply them yet
+            </div>
+            <div class="note">
+              <strong>Difference from pull:</strong> Fetch is like previewing
+              updates, pull actually applies them
+            </div>
+          </div>
+        </div>
+
+        <!-- Common Workflow -->
+        <div class="section">
+          <h2><span class="emoji">🔄</span>Typical Daily Workflow</h2>
+
+          <div class="command-block">
+            <div class="description">
+              <strong>Step 1:</strong> Check what's new on GitHub
+            </div>
+            <div class="command">git pull</div>
+          </div>
+
+          <div class="command-block">
+            <div class="description">
+              <strong>Step 2:</strong> Make your changes to files
+            </div>
+            <div class="note">Work on your code in your text editor</div>
+          </div>
+
+          <div class="command-block">
+            <div class="description">
+              <strong>Step 3:</strong> Check what you changed
+            </div>
+            <div class="command">git status</div>
+          </div>
+
+          <div class="command-block">
+            <div class="description">
+              <strong>Step 4:</strong> Stage your changes
+            </div>
+            <div class="command">git add .</div>
+          </div>
+
+          <div class="command-block">
+            <div class="description">
+              <strong>Step 5:</strong> Save your changes
+            </div>
+            <div class="command">git commit -m "Describe what you did"</div>
+          </div>
+
+          <div class="command-block">
+            <div class="description">
+              <strong>Step 6:</strong> Upload to GitHub
+            </div>
+            <div class="command">git push</div>
+          </div>
+        </div>
+
+        <!-- Help -->
+        <div class="section">
+          <h2><span class="emoji">❓</span>Getting Help</h2>
+
+          <div class="command-block">
+            <div class="command">git help</div>
+            <div class="description">Shows general help information</div>
+          </div>
+
+          <div class="command-block">
+            <div class="command">git help commit</div>
+            <div class="description">
+              Shows detailed help about a specific command (like 'commit')
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <p>
+          <strong>Remember:</strong> Git is like a time machine for your code!
+          🕐
+        </p>
+        <p>
+          Don't be afraid to experiment - you can always go back to a previous
+          version.
+        </p>
+        <p style="margin-top: 15px; opacity: 0.7">
+          Save this page for quick reference while coding!
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>
+$

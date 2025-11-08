@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Python Cheat Sheet for Beginners</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        line-height: 1.6;
+      }
+      .container {
+        background: white;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      }
+      h1 {
+        color: #667eea;
+        text-align: center;
+        border-bottom: 3px solid #667eea;
+        padding-bottom: 10px;
+      }
+      h2 {
+        color: #764ba2;
+        margin-top: 30px;
+        background: #f0f0f0;
+        padding: 10px;
+        border-left: 5px solid #667eea;
+      }
+      .section {
+        margin: 20px 0;
+        padding: 15px;
+        background: #f9f9f9;
+        border-radius: 5px;
+      }
+      .code {
+        background: #2d2d2d;
+        color: #f8f8f2;
+        padding: 15px;
+        border-radius: 5px;
+        overflow-x: auto;
+        font-family: "Courier New", monospace;
+        margin: 10px 0;
+      }
+      .note {
+        background: #fff3cd;
+        border-left: 4px solid #ffc107;
+        padding: 10px;
+        margin: 10px 0;
+      }
+      .example {
+        background: #d1ecf1;
+        border-left: 4px solid #0c5460;
+        padding: 10px;
+        margin: 10px 0;
+      }
+      .keyword {
+        color: #e83e8c;
+        font-weight: bold;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 15px 0;
+      }
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 12px;
+        text-align: left;
+      }
+      th {
+        background: #667eea;
+        color: white;
+      }
+      tr:nth-child(even) {
+        background: #f9f9f9;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>🐍 Python Cheat Sheet for Beginners</h1>
+      <p style="text-align: center; color: #666">
+        Your quick reference guide to Python programming
+      </p>
+
+      <h2>📝 1. Variables & Data Types</h2>
+      <div class="section">
+        <p>
+          <strong>Variables:</strong> Containers that store data values. Think
+          of them as labeled boxes.
+        </p>
+        <div class="code">
+          # Variables don't need declaration, just assign a value name = "Alice"
+          # String (text) age = 25 # Integer (whole number) height = 5.6 # Float
+          (decimal number) is_student = True # Boolean (True/False)
+        </div>
+        <div class="note">
+          <strong>💡 Note:</strong> Variable names should be lowercase with
+          underscores (snake_case). They can't start with numbers!
+        </div>
+      </div>
+
+      <h2>🔢 2. Basic Data Types</h2>
+      <div class="section">
+        <table>
+          <tr>
+            <th>Type</th>
+            <th>Description</th>
+            <th>Example</th>
+          </tr>
+          <tr>
+            <td>str</td>
+            <td>String - text data</td>
+            <td>"Hello World"</td>
+          </tr>
+          <tr>
+            <td>int</td>
+            <td>Integer - whole numbers</td>
+            <td>42</td>
+          </tr>
+          <tr>
+            <td>float</td>
+            <td>Float - decimal numbers</td>
+            <td>3.14</td>
+          </tr>
+          <tr>
+            <td>bool</td>
+            <td>Boolean - True or False</td>
+            <td>True</td>
+          </tr>
+          <tr>
+            <td>list</td>
+            <td>Ordered, changeable collection</td>
+            <td>[1, 2, 3]</td>
+          </tr>
+          <tr>
+            <td>tuple</td>
+            <td>Ordered, unchangeable collection</td>
+            <td>(1, 2, 3)</td>
+          </tr>
+          <tr>
+            <td>dict</td>
+            <td>Key-value pairs</td>
+            <td>{"name": "Bob"}</td>
+          </tr>
+        </table>
+      </div>
+
+      <h2>➕ 3. Operators</h2>
+      <div class="section">
+        <p><strong>Arithmetic Operators:</strong></p>
+        <div class="code">
+          + (addition) # 5 + 3 = 8 - (subtraction) # 5 - 3 = 2 *
+          (multiplication) # 5 * 3 = 15 / (division) # 5 / 2 = 2.5 // (floor
+          division) # 5 // 2 = 2 (rounds down) % (modulus) # 5 % 2 = 1
+          (remainder) ** (exponent) # 5 ** 2 = 25 (5 squared)
+        </div>
+
+        <p><strong>Comparison Operators:</strong> (Return True or False)</p>
+        <div class="code">
+          == (equal to) # 5 == 5 is True != (not equal to) # 5 != 3 is True >
+          (greater than) # 5 > 3 is True < (less than) # 5 < 3 is False >=
+          (greater or equal) # 5 >= 5 is True <= (less or equal) # 5 <= 3 is
+          False
+        </div>
+
+        <p><strong>Logical Operators:</strong></p>
+        <div class="code">
+          and # Both conditions must be True or # At least one condition must be
+          True not # Reverses the result (True becomes False)
+        </div>
+      </div>
+
+      <h2>📋 4. Lists</h2>
+      <div class="section">
+        <p>
+          <strong>Lists:</strong> Ordered collections that can hold multiple
+          items. They're changeable!
+        </p>
+        <div class="code">
+          # Creating a list fruits = ["apple", "banana", "cherry"] # Accessing
+          items (indexing starts at 0) first_fruit = fruits[0] # "apple"
+          last_fruit = fruits[-1] # "cherry" (negative = from end) # Common list
+          methods fruits.append("orange") # Add to end fruits.insert(1, "mango")
+          # Insert at position 1 fruits.remove("banana") # Remove specific item
+          fruits.pop() # Remove last item fruits.sort() # Sort alphabetically
+          len(fruits) # Get length of list
+        </div>
+      </div>
+
+      <h2>📖 5. Dictionaries</h2>
+      <div class="section">
+        <p>
+          <strong>Dictionaries:</strong> Store data in key-value pairs. Like a
+          real dictionary where you look up a word (key) to find its definition
+          (value).
+        </p>
+        <div class="code">
+          # Creating a dictionary person = { "name": "Alice", "age": 25, "city":
+          "New York" } # Accessing values print(person["name"]) # "Alice"
+          print(person.get("age")) # 25 # Adding/updating person["job"] =
+          "Engineer" # Add new key-value person["age"] = 26 # Update existing
+          value # Common methods person.keys() # Get all keys person.values() #
+          Get all values person.items() # Get all key-value pairs
+        </div>
+      </div>
+
+      <h2>🔁 6. If Statements (Conditionals)</h2>
+      <div class="section">
+        <p>
+          <strong>If statements:</strong> Make decisions in your code. Execute
+          different code based on conditions.
+        </p>
+        <div class="code">
+          age = 18 if age >= 18: print("You are an adult") elif age >= 13:
+          print("You are a teenager") else: print("You are a child")
+        </div>
+        <div class="note">
+          <strong>💡 Note:</strong> Python uses indentation (4 spaces or 1 tab)
+          to define code blocks. This is REQUIRED!
+        </div>
+      </div>
+
+      <h2>🔄 7. Loops</h2>
+      <div class="section">
+        <p>
+          <strong>For Loops:</strong> Repeat code for each item in a sequence.
+        </p>
+        <div class="code">
+          # Loop through a list fruits = ["apple", "banana", "cherry"] for fruit
+          in fruits: print(fruit) # Loop through a range of numbers for i in
+          range(5): # 0, 1, 2, 3, 4 print(i) for i in range(2, 6): # 2, 3, 4, 5
+          print(i)
+        </div>
+
+        <p>
+          <strong>While Loops:</strong> Repeat code while a condition is True.
+        </p>
+        <div class="code">
+          count = 0 while count < 5: print(count) count += 1 # Same as: count =
+          count + 1
+        </div>
+
+        <div class="example">
+          <strong>🎯 Example:</strong> Break and continue
+          <div class="code">
+            for i in range(10): if i == 3: continue # Skip this iteration if i
+            == 7: break # Exit the loop completely print(i)
+          </div>
+        </div>
+      </div>
+
+      <h2>🛠️ 8. Functions</h2>
+      <div class="section">
+        <p>
+          <strong>Functions:</strong> Reusable blocks of code that perform a
+          specific task.
+        </p>
+        <div class="code">
+          # Defining a function def greet(name): return f"Hello, {name}!" #
+          Calling a function message = greet("Alice") print(message) # Output:
+          Hello, Alice! # Function with multiple parameters def add_numbers(a,
+          b): return a + b result = add_numbers(5, 3) # 8 # Function with
+          default parameter def greet_with_title(name, title="Mr."): return
+          f"Hello, {title} {name}"
+        </div>
+      </div>
+
+      <h2>📥📤 9. Input & Output</h2>
+      <div class="section">
+        <p><strong>Getting user input and displaying output:</strong></p>
+        <div class="code">
+          # Output (printing to screen) print("Hello, World!") print("Value:",
+          42) print(f"My name is {name} and I am {age}") # f-string # Input
+          (getting data from user) name = input("What is your name? ") age =
+          int(input("What is your age? ")) # Convert to integer
+        </div>
+        <div class="note">
+          <strong>💡 Note:</strong> input() always returns a string. Use int()
+          or float() to convert to numbers!
+        </div>
+      </div>
+
+      <h2>📝 10. String Methods</h2>
+      <div class="section">
+        <div class="code">
+          text = "Hello World" text.upper() # "HELLO WORLD" text.lower() #
+          "hello world" text.strip() # Remove whitespace from ends
+          text.replace("H", "J") # "Jello World" text.split() # ["Hello",
+          "World"] text.startswith("He") # True text.endswith("ld") # True
+          len(text) # 11 (length)
+        </div>
+      </div>
+
+      <h2>🔧 11. Common Built-in Functions</h2>
+      <div class="section">
+        <table>
+          <tr>
+            <th>Function</th>
+            <th>Description</th>
+            <th>Example</th>
+          </tr>
+          <tr>
+            <td>len()</td>
+            <td>Returns length of an object</td>
+            <td>len([1,2,3]) → 3</td>
+          </tr>
+          <tr>
+            <td>type()</td>
+            <td>Returns the type of an object</td>
+            <td>type(42) → int</td>
+          </tr>
+          <tr>
+            <td>str()</td>
+            <td>Converts to string</td>
+            <td>str(42) → "42"</td>
+          </tr>
+          <tr>
+            <td>int()</td>
+            <td>Converts to integer</td>
+            <td>int("42") → 42</td>
+          </tr>
+          <tr>
+            <td>float()</td>
+            <td>Converts to float</td>
+            <td>float("3.14") → 3.14</td>
+          </tr>
+          <tr>
+            <td>max()</td>
+            <td>Returns largest item</td>
+            <td>max([1,5,3]) → 5</td>
+          </tr>
+          <tr>
+            <td>min()</td>
+            <td>Returns smallest item</td>
+            <td>min([1,5,3]) → 1</td>
+          </tr>
+          <tr>
+            <td>sum()</td>
+            <td>Sums all items</td>
+            <td>sum([1,2,3]) → 6</td>
+          </tr>
+        </table>
+      </div>
+
+      <h2>💬 12. Comments</h2>
+      <div class="section">
+        <p>
+          <strong>Comments:</strong> Notes in your code that Python ignores. Use
+          them to explain what your code does!
+        </p>
+        <div class="code">
+          # This is a single-line comment """ This is a multi-line comment. You
+          can write multiple lines here. Useful for longer explanations. """ x =
+          5 # You can also add comments after code
+        </div>
+      </div>
+
+      <h2>⚠️ 13. Try-Except (Error Handling)</h2>
+      <div class="section">
+        <p>
+          <strong>Try-Except:</strong> Handle errors gracefully without crashing
+          your program.
+        </p>
+        <div class="code">
+          try: number = int(input("Enter a number: ")) result = 10 / number
+          print(result) except ValueError: print("That's not a valid number!")
+          except ZeroDivisionError: print("You can't divide by zero!") except:
+          print("Something went wrong!") finally: print("This runs no matter
+          what")
+        </div>
+      </div>
+
+      <h2>📦 14. Importing Modules</h2>
+      <div class="section">
+        <p>
+          <strong>Modules:</strong> Pre-written code you can use in your
+          programs.
+        </p>
+        <div class="code">
+          # Import entire module import math print(math.sqrt(16)) # 4.0 # Import
+          specific functions from math import sqrt, pi print(sqrt(16)) # 4.0
+          print(pi) # 3.14159... # Import with alias import random as rand
+          print(rand.randint(1, 10)) # Random number 1-10
+        </div>
+      </div>
+
+      <h2>🎯 15. List Comprehensions</h2>
+      <div class="section">
+        <p>
+          <strong>List Comprehensions:</strong> A shorter way to create lists
+          based on existing lists.
+        </p>
+        <div class="code">
+          # Traditional way squares = [] for i in range(10): squares.append(i **
+          2) # List comprehension (same result, shorter!) squares = [i ** 2 for
+          i in range(10)] # With condition even_squares = [i ** 2 for i in
+          range(10) if i % 2 == 0]
+        </div>
+      </div>
+
+      <div
+        style="
+          background: #667eea;
+          color: white;
+          padding: 20px;
+          border-radius: 5px;
+          margin-top: 30px;
+          text-align: center;
+        "
+      >
+        <h3>🚀 Quick Tips for Success</h3>
+        <ul style="text-align: left; display: inline-block">
+          <li>Practice daily - even 15 minutes helps!</li>
+          <li>Read error messages carefully - they tell you what's wrong</li>
+          <li>Use meaningful variable names (good: student_age, bad: x)</li>
+          <li>Comment your code so you remember what it does later</li>
+          <li>Don't be afraid to experiment and break things!</li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

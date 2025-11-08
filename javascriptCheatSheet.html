@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML & JavaScript Cheat Sheet for Beginners</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 20px;
+        background-color: #f4f4f4;
+      }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      h1 {
+        color: #333;
+        text-align: center;
+        border-bottom: 3px solid #007acc;
+        padding-bottom: 10px;
+      }
+      h2 {
+        color: #007acc;
+        border-left: 4px solid #007acc;
+        padding-left: 10px;
+        margin-top: 30px;
+      }
+      .tag-example {
+        background: #f8f8f8;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        padding: 15px;
+        margin: 10px 0;
+      }
+      .tag-name {
+        color: #d73a49;
+        font-weight: bold;
+        font-size: 18px;
+      }
+      .description {
+        color: #666;
+        margin: 5px 0;
+        font-style: italic;
+      }
+      .example {
+        background: #2d3748;
+        color: #e2e8f0;
+        padding: 10px;
+        border-radius: 3px;
+        font-family: "Courier New", monospace;
+        margin: 10px 0;
+        overflow-x: auto;
+      }
+      .live-example {
+        background: #e8f5e8;
+        border: 1px solid #4caf50;
+        padding: 10px;
+        margin: 10px 0;
+        border-radius: 3px;
+      }
+      .note {
+        background: #fff3cd;
+        border: 1px solid #ffeaa7;
+        padding: 10px;
+        border-radius: 3px;
+        margin: 10px 0;
+      }
+      button {
+        background: #007acc;
+        color: white;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      button:hover {
+        background: #005a9e;
+      }
+      .interactive-demo {
+        border: 2px solid #007acc;
+        padding: 15px;
+        margin: 15px 0;
+        border-radius: 5px;
+        background: #f0f8ff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>🚀 Complete HTML & JavaScript Cheat Sheet for Beginners</h1>
+
+      <div class="note">
+        <strong>Welcome to coding!</strong> This cheat sheet covers the most
+        important HTML elements and JavaScript basics. Each section includes
+        what the element does, how to use it, and live examples you can interact
+        with.
+      </div>
+
+      <h2>📄 Document Structure Elements</h2>
+
+      <div class="tag-example">
+        <div class="tag-name">&lt;!DOCTYPE html&gt;</div>
+        <div class="description">
+          Tells the browser this is an HTML5 document. Always put this at the
+          very top!
+        </div>
+        <div class="example">&lt;!DOCTYPE html&gt;</div>
+      </div>
+
+      <div class="tag-example">
+        <div class="tag-name">&lt;html&gt;</div>
+        <div class="description">
+          The root element that wraps all content on the page
+        </div>
+        <div class="example">
+          &lt;html lang="en"&gt;<br />&nbsp;&nbsp;All your content goes here<br />&lt;/html&gt;
+        </div>
+      </div>
+
+      <div class="tag-example">
+        <div class="tag-name">&lt;head&gt;</div>
+        <div class="description">
+          Contains information about the page that doesn't show up on the page
+          itself (like the title in the browser tab)
+        </div>
+        <div class="example">
+          &lt;head&gt;<br />&nbsp;&nbsp;&lt;title&gt;My Website&lt;/title&gt;<br />&nbsp;&nbsp;&lt;meta
+          charset="UTF-8"&gt;<br />&lt;/head&gt;
+        </div>
+      </div>
+
+      <div class="tag-example">
+        <div class="tag-name">&lt;body&gt;</div>
+        <div class="description">
+          Contains all the visible content of your webpage
+        </div>
+        <div class="example">
+          &lt;body&gt;<br />&nbsp;&nbsp;&lt;h1&gt;Welcome to my
+          site!&lt;/h1&gt;<br />&nbsp;&nbsp;&lt;p&gt;This is visible
+          content&lt;/p&gt;<br />&lt;/body&gt;
+        </div>
+      </div>
+
+      <h2>📝 Text Elements</h2>
+
+      <div class="tag-example">
+        <div class="tag-name">&lt;h1&gt; to &lt;h6&gt;</div>
+        <div class="description">
+          Headings - h1 is the biggest, h6 is the smallest. Use them to organize
+          your content!
+        </div>
+        <div class="example">
+          &lt;h1&gt;Main Title&lt;/h1&gt;<br />&lt;h2&gt;Section
+          Title&lt;/h2&gt;<br />&lt;h3&gt;Subsection&lt;/h3&gt;
+        </div>
+        <div class="live-example">
+          <h1>This is an H1 heading</h1>
+          <h2>This is an H2 heading</h2>
+          <h3>This is an H3 heading</h3>
+        </div>
+      </div>
+
+      <div class="tag-example">
+        <div class="tag-name">&lt;p&gt;</div>
+        <div class="description">Paragraph - for regular text content</div>
+        <div class="example">
+          &lt;p&gt;This is a paragraph of text.&lt;/p&gt;
+        </div>
+        <div class="live-example">
+          <p>
+            This is what a paragraph looks like. It's perfect for regular text
+            content.
+          </p>
+        </div>
+      </div>
+
+      <div class="tag-example">
+        <div class="tag-name">&lt;strong&gt; and &lt;em&gt;</div>
+        <div class="description">
+          Strong makes text bold and emphasizes importance. Em makes text italic
+          for emphasis.
+        </div>
+        <div class="example">
+          &lt;p&gt;This is &lt;strong&gt;very important&lt;/strong&gt; and this
+          is &lt;em&gt;emphasized&lt;/em&gt;.&lt;/p&gt;
+        </div>
+        <div class="live-example">
+          <p>
+            This is <strong>very important</strong> and this is
+            <em>emphasized</em>.
+          </p>
+        </div>
+      </div>
+
+      <div class="tag-example">
+        <div class="tag-name">&lt;br&gt;</div>
+        <div class="description">
+          Line break - creates a new line (this tag doesn't need a closing tag!)
+        </div>
+        <div class="example">First line&lt;br&gt;<br />Second line</div>
+        <div class="live-example">
+          First line<br />
+          Second line
+        </div>
+      </div>
+
+      <h2>🔗 Links and Navigation</h2>
+
+      <div class="tag-example">
+        <div class="tag-name">&lt;a&gt;</div>
+        <div class="description">
+          Anchor tag - creates links to other pages, sections, or files
+        </div>
+        <div class="example">
+          &lt;a href="https://www.google.com"&gt;Go to Google&lt;/a&gt;<br />&lt;a
+          href="#section1"&gt;Jump to Section 1&lt;/a&gt;
+        </div>
+        <div class="live-example">
+          <a href="https://www.google.com" target="_blank">Go to Google</a
+          ><br />
+          <a href="#interactive-section">Jump to Interactive Section</a>
+        </div>
+      </div>
+
+      <h2>📋 Lists</h2>
+
+      <div class="tag-example">
+        <div class="tag-name">&lt;ul&gt; and &lt;li&gt;</div>
+        <div class="description">
+          Unordered list (bullet points) and list items
+        </div>
+        <div class="example">
+          &lt;ul&gt;<br />&nbsp;&nbsp;&lt;li&gt;First item&lt;/li&gt;<br />&nbsp;&nbsp;&lt;li&gt;Second
+          item&lt;/li&gt;<br />&lt;/ul&gt;
+        </div>
+        <div class="live-example">
+          <ul>
+            <li>First item</li>
+            <li>Second item</li>
+            <li>Third item</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tag-example">
+        <div class="tag-name">&lt;ol&gt; and &lt;li&gt;</div>
+        <div class="description">Ordered list (numbered) and list items</div>
+        <div class="example">
+          &lt;ol&gt;<br />&nbsp;&nbsp;&lt;li&gt;Step one&lt;/li&gt;<br />&nbsp;&nbsp;&lt;li&gt;Step
+          two&lt;/li&gt;<br />&lt;/ol&gt;
+        </div>
+        <div class="live-example">
+          <ol>
+            <li>Step one</li>
+            <li>Step two</li>
+            <li>Step three</li>
+          </ol>
+        </div>
+      </div>
+
+      <h2>🖼️ Images and Media</h2>
+
+      <div class="tag-example">
+        <div class="tag-name">&lt;img&gt;</div>
+        <div class="description">
+          Displays images (doesn't need a closing tag!)
+        </div>
+        <div class="example">
+          &lt;img src="image.jpg" alt="Description of image" width="300"&gt;
+        </div>
+        <div class="note">
+          Always include the 'alt' attribute to describe your image for
+          accessibility!
+        </div>
+      </div>
+
+      <h2>📊 Tables</h2>
+
+      <div class="tag-example">
+        <div class="tag-name">
+          &lt;table&gt;, &lt;tr&gt;, &lt;th&gt;, &lt;td&gt;
+        </div>
+        <div class="description">
+          Creates tables. tr = table row, th = table header, td = table data
+        </div>
+        <div class="example">
+          &lt;table&gt;<br />&nbsp;&nbsp;&lt;tr&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Name&lt;/th&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Age&lt;/th&gt;<br />&nbsp;&nbsp;&lt;/tr&gt;<br />&nbsp;&nbsp;&lt;tr&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;John&lt;/td&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;25&lt;/td&gt;<br />&nbsp;&nbsp;&lt;/tr&gt;<br />&lt;/table&gt;
+        </div>
+        <div class="live-example">
+          <table border="1" style="border-collapse: collapse">
+            <tr>
+              <th>Name</th>
+              <th>Age</th>
+              <th>City</th>
+            </tr>
+            <tr>
+              <td>John</td>
+              <td>25</td>
+              <td>New York</td>
+            </tr>
+            <tr>
+              <td>Jane</td>
+              <td>30</td>
+              <td>Los Angeles</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <h2>📝 Forms and Input</h2>
+
+      <div class="tag-example">
+        <div class="tag-name">&lt;form&gt;</div>
+        <div class="description">Creates a form to collect user input</div>
+        <div class="example">
+          &lt;form&gt;<br />&nbsp;&nbsp;&lt;input type="text" placeholder="Enter
+          your name"&gt;<br />&nbsp;&nbsp;&lt;button
+          type="submit"&gt;Submit&lt;/button&gt;<br />&lt;/form&gt;
+        </div>
+      </div>
+
+      <div class="tag-example">
+        <div class="tag-name">&lt;input&gt;</div>
+        <div class="description">
+          Creates various input fields (text, email, password, etc.)
+        </div>
+        <div class="example">
+          &lt;input type="text" placeholder="Your name"&gt;<br />&lt;input
+          type="email" placeholder="your@email.com"&gt;<br />&lt;input
+          type="password" placeholder="Password"&gt;
+        </div>
+        <div class="live-example">
+          <input type="text" placeholder="Your name" /><br /><br />
+          <input type="email" placeholder="your@email.com" /><br /><br />
+          <input type="password" placeholder="Password" />
+        </div>
+      </div>
+
+      <div class="tag-example">
+        <div class="tag-name">&lt;button&gt;</div>
+        <div class="description">Creates clickable buttons</div>
+        <div class="example">
+          &lt;button onclick="alert('Hello!')"&gt;Click me!&lt;/button&gt;
+        </div>
+        <div class="live-example">
+          <button onclick="alert('Hello! You clicked the button!')">
+            Click me!
+          </button>
+        </div>
+      </div>
+
+      <h2>🏗️ Container Elements</h2>
+
+      <div class="tag-example">
+        <div class="tag-name">&lt;div&gt;</div>
+        <div class="description">
+          Division - a generic container for grouping elements (block-level)
+        </div>
+        <div class="example">
+          &lt;div style="background: lightblue; padding: 10px;"&gt;<br />&nbsp;&nbsp;&lt;h3&gt;Section
+          Title&lt;/h3&gt;<br />&nbsp;&nbsp;&lt;p&gt;Some content
+          here&lt;/p&gt;<br />&lt;/div&gt;
+        </div>
+        <div class="live-example">
+          <div style="background: lightblue; padding: 10px; border-radius: 5px">
+            <h3>This is inside a div</h3>
+            <p>Divs are great for organizing and styling groups of content.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="tag-example">
+        <div class="tag-name">&lt;span&gt;</div>
+        <div class="description">
+          Span - a generic container for inline elements (doesn't create new
+          lines)
+        </div>
+        <div class="example">
+          &lt;p&gt;This is normal text, &lt;span style="color: red;"&gt;this is
+          red text&lt;/span&gt;, back to normal.&lt;/p&gt;
+        </div>
+        <div class="live-example">
+          <p>
+            This is normal text,
+            <span style="color: red">this is red text</span>, back to normal.
+          </p>
+        </div>
+      </div>
+
+      <h2>💻 JavaScript Basics</h2>
+
+      <div class="tag-example">
+        <div class="tag-name">&lt;script&gt;</div>
+        <div class="description">
+          Contains JavaScript code that makes your webpage interactive
+        </div>
+        <div class="example">
+          &lt;script&gt;<br />&nbsp;&nbsp;alert("Hello World!");<br />&nbsp;&nbsp;console.log("This
+          appears in the browser console");<br />&lt;/script&gt;
+        </div>
+      </div>
+
+      <div class="tag-example">
+        <div class="tag-name">Variables in JavaScript</div>
+        <div class="description">
+          Store data in variables using let, const, or var
+        </div>
+        <div class="example">
+          let name = "John";<br />const age = 25;<br />var city = "New York";
+        </div>
+        <div class="note">
+          Use 'let' for variables that can change, 'const' for constants that
+          won't change.
+        </div>
+      </div>
+
+      <div class="tag-example">
+        <div class="tag-name">Functions in JavaScript</div>
+        <div class="description">Functions are reusable blocks of code</div>
+        <div class="example">
+          function greetUser(name) {<br />&nbsp;&nbsp;return "Hello, " + name +
+          "!";<br />}<br /><br />// Call the function<br />let message =
+          greetUser("Alice");
+        </div>
+      </div>
+
+      <div class="tag-example">
+        <div class="tag-name">DOM Manipulation</div>
+        <div class="description">Change HTML elements with JavaScript</div>
+        <div class="example">
+          // Get an element by its ID<br />document.getElementById("myElement")<br /><br />//
+          Change text content<br />document.getElementById("demo").innerHTML =
+          "New text!";<br /><br />// Change styles<br />document.getElementById("demo").style.color
+          = "red";
+        </div>
+      </div>
+
+      <h2 id="interactive-section">🎮 Interactive Examples</h2>
+
+      <div class="interactive-demo">
+        <h3>Try These Interactive Examples!</h3>
+
+        <div style="margin: 20px 0">
+          <h4>1. Change Text Color</h4>
+          <p id="colorText">This text will change color!</p>
+          <button onclick="changeColor()">Change Color</button>
+        </div>
+
+        <div style="margin: 20px 0">
+          <h4>2. Show/Hide Content</h4>
+          <div
+            id="hiddenContent"
+            style="
+              display: none;
+              background: #e8f5e8;
+              padding: 10px;
+              border-radius: 5px;
+            "
+          >
+            <p>🎉 Surprise! This content was hidden and now it's visible!</p>
+          </div>
+          <button onclick="toggleContent()">Show/Hide Content</button>
+        </div>
+
+        <div style="margin: 20px 0">
+          <h4>3. Counter Example</h4>
+          <p>Count: <span id="counter">0</span></p>
+          <button onclick="increment()">+1</button>
+          <button onclick="decrement()">-1</button>
+          <button onclick="reset()">Reset</button>
+        </div>
+
+        <div style="margin: 20px 0">
+          <h4>4. User Input</h4>
+          <input type="text" id="userInput" placeholder="Type something here" />
+          <button onclick="showInput()">Show What You Typed</button>
+          <p id="inputResult"></p>
+        </div>
+      </div>
+
+      <h2>🎯 Common Attributes</h2>
+
+      <div class="tag-example">
+        <div class="tag-name">id</div>
+        <div class="description">Gives an element a unique identifier</div>
+        <div class="example">
+          &lt;div id="header"&gt;Header content&lt;/div&gt;
+        </div>
+      </div>
+
+      <div class="tag-example">
+        <div class="tag-name">class</div>
+        <div class="description">
+          Assigns one or more CSS classes to an element
+        </div>
+        <div class="example">
+          &lt;p class="intro highlight"&gt;Important intro text&lt;/p&gt;
+        </div>
+      </div>
+
+      <div class="tag-example">
+        <div class="tag-name">style</div>
+        <div class="description">Adds inline CSS styling to an element</div>
+        <div class="example">
+          &lt;p style="color: blue; font-size: 18px;"&gt;Blue text&lt;/p&gt;
+        </div>
+      </div>
+
+      <h2>💡 Beginner Tips</h2>
+
+      <div class="note">
+        <h3>Essential Tips for New Coders:</h3>
+        <ul>
+          <li>
+            <strong>Always close your tags!</strong> Every opening tag needs a
+            closing tag (except self-closing tags like &lt;br&gt; and
+            &lt;img&gt;)
+          </li>
+          <li>
+            <strong>Indent your code</strong> to make it readable and see the
+            structure clearly
+          </li>
+          <li>
+            <strong>Use meaningful names</strong> for IDs and classes (like
+            "navigation" instead of "div1")
+          </li>
+          <li>
+            <strong>Test frequently</strong> - save your file and refresh the
+            browser often to see changes
+          </li>
+          <li>
+            <strong>Use the browser's developer tools</strong> (press F12) to
+            inspect elements and debug
+          </li>
+          <li>
+            <strong>Comments are your friend!</strong> Use &lt;!-- comments
+            --&gt; in HTML and // comments in JavaScript
+          </li>
+        </ul>
+      </div>
+
+      <div class="note">
+        <h3>Next Steps in Your Coding Journey:</h3>
+        <ol>
+          <li>Practice with these basic elements first</li>
+          <li>Learn CSS to make your pages look beautiful</li>
+          <li>Explore more JavaScript to add interactivity</li>
+          <li>Try building a simple project like a personal webpage</li>
+          <li>Join coding communities and keep learning!</li>
+        </ol>
+      </div>
+
+      <footer
+        style="
+          text-align: center;
+          margin-top: 40px;
+          padding: 20px;
+          background: #f8f9fa;
+          border-radius: 5px;
+        "
+      >
+        <p><strong>Happy Coding! 🚀</strong></p>
+        <p>
+          Remember: Every expert was once a beginner. Keep practicing and you'll
+          get there!
+        </p>
+      </footer>
+    </div>
+
+    <script>
+      // JavaScript functions for the interactive examples
+      let count = 0;
+      let colors = ["red", "blue", "green", "purple", "orange"];
+      let currentColorIndex = 0;
+
+      function changeColor() {
+        const textElement = document.getElementById("colorText");
+        textElement.style.color = colors[currentColorIndex];
+        currentColorIndex = (currentColorIndex + 1) % colors.length;
+      }
+
+      function toggleContent() {
+        const content = document.getElementById("hiddenContent");
+        if (content.style.display === "none") {
+          content.style.display = "block";
+        } else {
+          content.style.display = "none";
+        }
+      }
+
+      function increment() {
+        count++;
+        document.getElementById("counter").textContent = count;
+      }
+
+      function decrement() {
+        count--;
+        document.getElementById("counter").textContent = count;
+      }
+
+      function reset() {
+        count = 0;
+        document.getElementById("counter").textContent = count;
+      }
+
+      function showInput() {
+        const inputValue = document.getElementById("userInput").value;
+        const resultElement = document.getElementById("inputResult");
+
+        if (inputValue.trim() === "") {
+          resultElement.innerHTML = "<em>Please type something first!</em>";
+          resultElement.style.color = "red";
+        } else {
+          resultElement.innerHTML = `You typed: <strong>"${inputValue}"</strong>`;
+          resultElement.style.color = "green";
+        }
+      }
+
+      // Welcome message when page loads
+      window.addEventListener("load", function () {
+        console.log(
+          "Welcome to HTML & JavaScript! Open the browser console (F12) to see this message."
+        );
+      });
+    </script>
+  </body>
+</html>

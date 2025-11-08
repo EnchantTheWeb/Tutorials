@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML Cheat Sheet for Beginners</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 20px;
+        background-color: #f4f4f4;
+      }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      h1 {
+        color: #333;
+        text-align: center;
+      }
+      h2 {
+        color: #0066cc;
+        border-bottom: 2px solid #0066cc;
+        padding-bottom: 5px;
+      }
+      .tag-example {
+        background: #f8f8f8;
+        border: 1px solid #ddd;
+        border-left: 4px solid #0066cc;
+        padding: 10px;
+        margin: 10px 0;
+        border-radius: 5px;
+      }
+      .tag-name {
+        font-weight: bold;
+        color: #cc0000;
+        font-family: monospace;
+      }
+      .explanation {
+        color: #555;
+        margin-top: 5px;
+      }
+      code {
+        background: #e8e8e8;
+        padding: 2px 5px;
+        border-radius: 3px;
+        font-family: monospace;
+      }
+      .note {
+        background: #fff3cd;
+        border: 1px solid #ffeaa7;
+        padding: 10px;
+        border-radius: 5px;
+        margin: 10px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>🌟 HTML Cheat Sheet for Beginners 🌟</h1>
+
+      <div class="note">
+        <strong>Welcome to HTML!</strong> HTML (HyperText Markup Language) is
+        the foundation of all websites. It uses "tags" (words in angle brackets
+        like &lt;tag&gt;) to structure and format content. Most tags come in
+        pairs: an opening tag &lt;tag&gt; and a closing tag &lt;/tag&gt;.
+      </div>
+
+      <h2>📋 Document Structure Tags</h2>
+
+      <div class="tag-example">
+        <div class="tag-name">&lt;!DOCTYPE html&gt;</div>
+        <div class="explanation">
+          Tells the browser this is an HTML5 document. Always put this at the
+          very top of your HTML file.
+          <br /><strong>Example:</strong> <code>&lt;!DOCTYPE html&gt;</code>
+        </div>
+      </div>
+
+      <div class="tag-example">
+        <div class="tag-name">&lt;html&gt;&lt;/html&gt;</div>
+        <div class="explanation">
+          The root element that wraps all content on the page. Everything goes
+          inside this.
+          <br /><strong>Example:</strong>
+          <code>&lt;html lang="en"&gt;...&lt;/html&gt;</code>
+        </div>
+      </div>
+
+      <div class="tag-example">
+        <div class="tag-name">&lt;head&gt;&lt;/head&gt;</div>
+        <div class="explanation">
+          Contains metadata (information about the page) that doesn't show on
+          the webpage itself.
+          <br /><strong>Example:</strong>
+          <code
+            >&lt;head&gt;&lt;title&gt;My Page&lt;/title&gt;&lt;/head&gt;</code
+          >
+        </div>
+      </div>
+
+      <div class="tag-example">
+        <div class="tag-name">&lt;body&gt;&lt;/body&gt;</div>
+        <div class="explanation">
+          Contains all the visible content of your webpage - text, images,
+          links, etc.
+          <br /><strong>Example:</strong>
+          <code>&lt;body&gt;&lt;h1&gt;Welcome!&lt;/h1&gt;&lt;/body&gt;</code>
+        </div>
+      </div>
+
+      <h2>📝 Meta Information Tags</h2>
+
+      <div class="tag-example">
+        <div class="tag-name">&lt;title&gt;&lt;/title&gt;</div>
+        <div class="explanation">
+          Sets the title that appears in the browser tab and search results.
+          <br /><strong>Example:</strong>
+          <code>&lt;title&gt;My Amazing Website&lt;/title&gt;</code>
+        </div>
+      </div>
+
+      <div class="tag-example">
+        <div class="tag-name">&lt;meta&gt;</div>
+        <div class="explanation">
+          Provides metadata like character encoding, description, and viewport
+          settings. Self-closing tag.
+          <br /><strong>Examples:</strong> <br /><code
+            >&lt;meta charset="UTF-8"&gt;</code
+          >
+          (character encoding) <br /><code
+            >&lt;meta name="description" content="My website
+            description"&gt;</code
+          >
+        </div>
+      </div>
+
+      <h2>📰 Heading Tags</h2>
+
+      <div class="tag-example">
+        <div class="tag-name">
+          &lt;h1&gt;&lt;/h1&gt; to &lt;h6&gt;&lt;/h6&gt;
+        </div>
+        <div class="explanation">
+          Create headings of different sizes. h1 is the largest/most important,
+          h6 is the smallest.
+          <br /><strong>Examples:</strong> <br /><code
+            >&lt;h1&gt;Main Title&lt;/h1&gt;</code
+          >
+          <br /><code>&lt;h2&gt;Section Title&lt;/h2&gt;</code> <br /><code
+            >&lt;h3&gt;Subsection&lt;/h3&gt;</code
+          >
+        </div>
+      </div>
+
+      <h2>📄 Text Content Tags</h2>
+
+      <div class="tag-example">
+        <div class="tag-name">&lt;p&gt;&lt;/p&gt;</div>
+        <div class="explanation">
+          Creates a paragraph of text. Most text content should go in
+          paragraphs.
+          <br /><strong>Example:</strong>
+          <code>&lt;p&gt;This is a paragraph of text.&lt;/p&gt;</code>
+        </div>
+      </div>
+
+      <div class="tag-example">
+        <div class="tag-name">&lt;br&gt;</div>
+        <div class="explanation">
+          Creates a line break (like pressing Enter). Self-closing tag. Use
+          sparingly!
+          <br /><strong>Example:</strong>
+          <code>First line&lt;br&gt;Second line</code>
+        </div>
+      </div>
+
+      <div class="tag-example">
+        <div class="tag-name">&lt;hr&gt;</div>
+        <div class="explanation">
+          Creates a horizontal rule (line) to separate content. Self-closing
+          tag.
+          <br /><strong>Example:</strong> <code>&lt;hr&gt;</code>
+        </div>
+      </div>
+
+      <h2>✨ Text Formatting Tags</h2>
+
+      <div class="tag-example">
+        <div class="tag-name">&lt;strong&gt;&lt;/strong&gt;</div>
+        <div class="explanation">
+          Makes text bold and indicates it's important.
+          <br /><strong>Example:</strong>
+          <code>&lt;strong&gt;This is important!&lt;/strong&gt;</code>
+        </div>
+      </div>
+
+      <div class="tag-example">
+        <div class="tag-name">&lt;em&gt;&lt;/em&gt;</div>
+        <div class="explanation">
+          Makes text italic and emphasizes it.
+          <br /><strong>Example:</strong>
+          <code>&lt;em&gt;This is emphasized&lt;/em&gt;</code>
+        </div>
+      </div>
+
+      <div class="tag-example">
+        <div class="tag-name">&lt;b&gt;&lt;/b&gt;</div>
+        <div class="explanation">
+          Makes text bold (visual only, no special meaning).
+          <br /><strong>Example:</strong>
+          <code>&lt;b&gt;Bold text&lt;/b&gt;</code>
+        </div>
+      </div>
+
+      <div class="tag-example">
+        <div class="tag-name">&lt;i&gt;&lt;/i&gt;</div>
+        <div class="explanation">
+          Makes text italic (visual only, no special meaning).
+          <br /><strong>Example:</strong>
+          <code>&lt;i&gt;Italic text&lt;/i&gt;</code>
+        </div>
+      </div>
+
+      <div class="tag-example">
+        <div class="tag-name">&lt;u&gt;&lt;/u&gt;</div>
+        <div class="explanation">
+          Underlines text. Be careful - users might think it's a link!
+          <br /><strong>Example:</strong>
+          <code>&lt;u&gt;Underlined text&lt;/u&gt;</code>
+        </div>
+      </div>
+
+      <div class="tag-example">
+        <div class="tag-name">&lt;mark&gt;&lt;/mark&gt;</div>
+        <div class="explanation">
+          Highlights text like a yellow highlighter marker.
+          <br /><strong>Example:</strong>
+          <code>&lt;mark&gt;Highlighted text&lt;/mark&gt;</code>
+        </div>
+      </div>
+
+      <div class="tag-example">
+        <div class="tag-name">&lt;small&gt;&lt;/small&gt;</div>
+        <div class="explanation">
+          Makes text smaller, often used for fine print or side comments.
+          <br /><strong>Example:</strong>
+          <code>&lt;small&gt;Small print text&lt;/small&gt;</code>
+        </div>
+      </div>
+
+      <div class="tag-example">
+        <div class="tag-name">
+          &lt;sub&gt;&lt;/sub&gt; and &lt;sup&gt;&lt;/sup&gt;
+        </div>
+        <div class="explanation">
+          Creates subscript (below baseline) and superscript (above baseline)
+          text.
+          <br /><strong>Examples:</strong> <br /><code
+            >H&lt;sub&gt;2&lt;/sub&gt;O</code
+          >
+          (H₂O) <br /><code>E=mc&lt;sup&gt;2&lt;/sup&gt;</code> (E=mc²)
+        </div>
+      </div>
+
+      <h2>🔗 Link and Navigation Tags</h2>
+
+      <div class="tag-example">
+        <div class="tag-name">&lt;a&gt;&lt;/a&gt;</div>
+        <div class="explanation">
+          Creates links to other pages, files, or sections. The "href" attribute
+          specifies where to go.
+          <br /><strong>Examples:</strong> <br /><code
+            >&lt;a href="https://google.com"&gt;Visit Google&lt;/a&gt;</code
+          >
+          <br /><code>&lt;a href="about.html"&gt;About Page&lt;/a&gt;</code>
+          <br /><code>&lt;a href="#section1"&gt;Go to Section 1&lt;/a&gt;</code>
+        </div>
+      </div>
+
+      <h2>🖼️ Media Tags</h2>
+
+      <div class="tag-example">
+        <div class="tag-name">&lt;img&gt;</div>
+        <div class="explanation">
+          Displays an image. Self-closing tag. Always include "alt" text for
+          accessibility!
+          <br /><strong>Example:</strong>
+          <code>&lt;img src="photo.jpg" alt="A beautiful sunset"&gt;</code>
+        </div>
+      </div>
+
+      <div class="tag-example">
+        <div class="tag-name">&lt;video&gt;&lt;/video&gt;</div>
+        <div class="explanation">
+          Embeds video content. Include "controls" to show play/pause buttons.
+          <br /><strong>Example:</strong>
+          <code>&lt;video src="movie.mp4" controls&gt;&lt;/video&gt;</code>
+        </div>
+      </div>
+
+      <div class="tag-example">
+        <div class="tag-name">&lt;audio&gt;&lt;/audio&gt;</div>
+        <div class="explanation">
+          Embeds audio content. Include "controls" to show play/pause buttons.
+          <br /><strong>Example:</strong>
+          <code>&lt;audio src="music.mp3" controls&gt;&lt;/audio&gt;</code>
+        </div>
+      </div>
+
+      <h2>📋 List Tags</h2>
+
+      <div class="tag-example">
+        <div class="tag-name">&lt;ul&gt;&lt;/ul&gt;</div>
+        <div class="explanation">
+          Creates an unordered (bulleted) list. Contains &lt;li&gt; items.
+          <br /><strong>Example:</strong> <br /><code>&lt;ul&gt;</code>
+          <br /><code>&nbsp;&nbsp;&lt;li&gt;First item&lt;/li&gt;</code>
+          <br /><code>&nbsp;&nbsp;&lt;li&gt;Second item&lt;/li&gt;</code>
+          <br /><code>&lt;/ul&gt;</code>
+        </div>
+      </div>
+
+      <div class="tag-example">
+        <div class="tag-name">&lt;ol&gt;&lt;/ol&gt;</div>
+        <div class="explanation">
+          Creates an ordered (numbered) list. Contains &lt;li&gt; items.
+          <br /><strong>Example:</strong> <br /><code>&lt;ol&gt;</code>
+          <br /><code>&nbsp;&nbsp;&lt;li&gt;Step one&lt;/li&gt;</code>
+          <br /><code>&nbsp;&nbsp;&lt;li&gt;Step two&lt;/li&gt;</code>
+          <br /><code>&lt;/ol&gt;</code>
+        </div>
+      </div>
+
+      <div class="tag-example">
+        <div class="tag-name">&lt;li&gt;&lt;/li&gt;</div>
+        <div class="explanation">
+          Creates a list item. Must be inside &lt;ul&gt; or &lt;ol&gt; tags.
+          <br /><strong>Example:</strong>
+          <code>&lt;li&gt;List item content&lt;/li&gt;</code>
+        </div>
+      </div>
+
+      <h2>📊 Table Tags</h2>
+
+      <div class="tag-example">
+        <div class="tag-name">&lt;table&gt;&lt;/table&gt;</div>
+        <div class="explanation">
+          Creates a table to display data in rows and columns.
+          <br /><strong>Example:</strong>
+          <code>&lt;table&gt;...&lt;/table&gt;</code>
+        </div>
+      </div>
+
+      <div class="tag-example">
+        <div class="tag-name">&lt;tr&gt;&lt;/tr&gt;</div>
+        <div class="explanation">
+          Creates a table row. Goes inside &lt;table&gt;.
+          <br /><strong>Example:</strong>
+          <code
+            >&lt;tr&gt;&lt;td&gt;Cell 1&lt;/td&gt;&lt;td&gt;Cell
+            2&lt;/td&gt;&lt;/tr&gt;</code
+          >
+        </div>
+      </div>
+
+      <div class="tag-example">
+        <div class="tag-name">&lt;td&gt;&lt;/td&gt;</div>
+        <div class="explanation">
+          Creates a regular table cell (table data). Goes inside &lt;tr&gt;.
+          <br /><strong>Example:</strong>
+          <code>&lt;td&gt;Cell content&lt;/td&gt;</code>
+        </div>
+      </div>
+
+      <div class="tag-example">
+        <div class="tag-name">&lt;th&gt;&lt;/th&gt;</div>
+        <div class="explanation">
+          Creates a table header cell. Usually bold and centered. Goes inside
+          &lt;tr&gt;.
+          <br /><strong>Example:</strong>
+          <code>&lt;th&gt;Column Header&lt;/th&gt;</code>
+        </div>
+      </div>
+
+      <h2>📝 Form Tags</h2>
+
+      <div class="tag-example">
+        <div class="tag-name">&lt;form&gt;&lt;/form&gt;</div>
+        <div class="explanation">
+          Creates a form for user input. Contains input fields, buttons, etc.
+          <br /><strong>Example:</strong>
+          <code
+            >&lt;form action="submit.php"
+            method="post"&gt;...&lt;/form&gt;</code
+          >
+        </div>
+      </div>
+
+      <div class="tag-example">
+        <div class="tag-name">&lt;input&gt;</div>
+        <div class="explanation">
+          Creates various input fields. Self-closing tag. Type determines what
+          kind of input.
+          <br /><strong>Examples:</strong> <br /><code
+            >&lt;input type="text" name="username"&gt;</code
+          >
+          (text box) <br /><code
+            >&lt;input type="password" name="pass"&gt;</code
+          >
+          (password field) <br /><code
+            >&lt;input type="email" name="email"&gt;</code
+          >
+          (email field) <br /><code
+            >&lt;input type="submit" value="Submit"&gt;</code
+          >
+          (submit button)
+        </div>
+      </div>
+
+      <div class="tag-example">
+        <div class="tag-name">&lt;textarea&gt;&lt;/textarea&gt;</div>
+        <div class="explanation">
+          Creates a multi-line text input area.
+          <br /><strong>Example:</strong>
+          <code
+            >&lt;textarea name="message" rows="4"
+            cols="50"&gt;&lt;/textarea&gt;</code
+          >
+        </div>
+      </div>
+
+      <div class="tag-example">
+        <div class="tag-name">&lt;button&gt;&lt;/button&gt;</div>
+        <div class="explanation">
+          Creates a clickable button.
+          <br /><strong>Example:</strong>
+          <code>&lt;button type="submit"&gt;Click Me!&lt;/button&gt;</code>
+        </div>
+      </div>
+
+      <div class="tag-example">
+        <div class="tag-name">&lt;select&gt;&lt;/select&gt;</div>
+        <div class="explanation">
+          Creates a dropdown menu. Contains &lt;option&gt; elements.
+          <br /><strong>Example:</strong> <br /><code
+            >&lt;select name="color"&gt;</code
+          >
+          <br /><code
+            >&nbsp;&nbsp;&lt;option value="red"&gt;Red&lt;/option&gt;</code
+          >
+          <br /><code
+            >&nbsp;&nbsp;&lt;option value="blue"&gt;Blue&lt;/option&gt;</code
+          >
+          <br /><code>&lt;/select&gt;</code>
+        </div>
+      </div>
+
+      <div class="tag-example">
+        <div class="tag-name">&lt;option&gt;&lt;/option&gt;</div>
+        <div class="explanation">
+          Creates an option in a dropdown menu. Goes inside &lt;select&gt;.
+          <br /><strong>Example:</strong>
+          <code>&lt;option value="apple"&gt;Apple&lt;/option&gt;</code>
+        </div>
+      </div>
+
+      <div class="tag-example">
+        <div class="tag-name">&lt;label&gt;&lt;/label&gt;</div>
+        <div class="explanation">
+          Creates a label for form elements. Improves accessibility.
+          <br /><strong>Example:</strong>
+          <code>&lt;label for="username"&gt;Username:&lt;/label&gt;</code>
+        </div>
+      </div>
+
+      <h2>🏗️ Semantic Structure Tags</h2>
+
+      <div class="tag-example">
+        <div class="tag-name">&lt;header&gt;&lt;/header&gt;</div>
+        <div class="explanation">
+          Defines the header section of a page or section. Usually contains
+          navigation, logo, etc.
+          <br /><strong>Example:</strong>
+          <code
+            >&lt;header&gt;&lt;h1&gt;Site
+            Title&lt;/h1&gt;&lt;nav&gt;...&lt;/nav&gt;&lt;/header&gt;</code
+          >
+        </div>
+      </div>
+
+      <div class="tag-example">
+        <div class="tag-name">&lt;nav&gt;&lt;/nav&gt;</div>
+        <div class="explanation">
+          Contains navigation links (menu items).
+          <br /><strong>Example:</strong>
+          <code
+            >&lt;nav&gt;&lt;a href="home.html"&gt;Home&lt;/a&gt;&lt;a
+            href="about.html"&gt;About&lt;/a&gt;&lt;/nav&gt;</code
+          >
+        </div>
+      </div>
+
+      <div class="tag-example">
+        <div class="tag-name">&lt;main&gt;&lt;/main&gt;</div>
+        <div class="explanation">
+          Contains the main content of the page. Should only be used once per
+          page.
+          <br /><strong>Example:</strong>
+          <code
+            >&lt;main&gt;&lt;h1&gt;Page Title&lt;/h1&gt;&lt;p&gt;Main
+            content...&lt;/p&gt;&lt;/main&gt;</code
+          >
+        </div>
+      </div>
+
+      <div class="tag-example">
+        <div class="tag-name">&lt;section&gt;&lt;/section&gt;</div>
+        <div class="explanation">
+          Defines a section of content, usually with its own heading.
+          <br /><strong>Example:</strong>
+          <code
+            >&lt;section&gt;&lt;h2&gt;About
+            Us&lt;/h2&gt;&lt;p&gt;Content...&lt;/p&gt;&lt;/section&gt;</code
+          >
+        </div>
+      </div>
+
+      <div class="tag-example">
+        <div class="tag-name">&lt;article&gt;&lt;/article&gt;</div>
+        <div class="explanation">
+          Contains independent, self-contained content like blog posts or news
+          articles.
+          <br /><strong>Example:</strong>
+          <code
+            >&lt;article&gt;&lt;h2&gt;Blog Post Title&lt;/h2&gt;&lt;p&gt;Post
+            content...&lt;/p&gt;&lt;/article&gt;</code
+          >
+        </div>
+      </div>
+
+      <div class="tag-example">
+        <div class="tag-name">&lt;aside&gt;&lt;/aside&gt;</div>
+        <div class="explanation">
+          Contains content that's related but separate from main content
+          (sidebars, ads, etc.).
+          <br /><strong>Example:</strong>
+          <code
+            >&lt;aside&gt;&lt;h3&gt;Related
+            Links&lt;/h3&gt;&lt;ul&gt;...&lt;/ul&gt;&lt;/aside&gt;</code
+          >
+        </div>
+      </div>
+
+      <div class="tag-example">
+        <div class="tag-name">&lt;footer&gt;&lt;/footer&gt;</div>
+        <div class="explanation">
+          Defines the footer section, usually containing copyright, contact
+          info, etc.
+          <br /><strong>Example:</strong>
+          <code
+            >&lt;footer&gt;&lt;p&gt;&copy; 2024 My
+            Website&lt;/p&gt;&lt;/footer&gt;</code
+          >
+        </div>
+      </div>
+
+      <h2>📦 Generic Container Tags</h2>
+
+      <div class="tag-example">
+        <div class="tag-name">&lt;div&gt;&lt;/div&gt;</div>
+        <div class="explanation">
+          A generic container for grouping content. Has no special meaning - use
+          for styling/layout.
+          <br /><strong>Example:</strong>
+          <code
+            >&lt;div class="container"&gt;&lt;p&gt;Content
+            here&lt;/p&gt;&lt;/div&gt;</code
+          >
+        </div>
+      </div>
+
+      <div class="tag-example">
+        <div class="tag-name">&lt;span&gt;&lt;/span&gt;</div>
+        <div class="explanation">
+          A generic inline container for small portions of text. Use for styling
+          individual words/phrases.
+          <br /><strong>Example:</strong>
+          <code
+            >&lt;p&gt;The &lt;span class="highlight"&gt;important
+            word&lt;/span&gt; stands out.&lt;/p&gt;</code
+          >
+        </div>
+      </div>
+
+      <h2>💻 Code and Technical Tags</h2>
+
+      <div class="tag-example">
+        <div class="tag-name">&lt;code&gt;&lt;/code&gt;</div>
+        <div class="explanation">
+          Displays inline code snippets in a monospace font.
+          <br /><strong>Example:</strong>
+          <code
+            >&lt;p&gt;Use the &lt;code&gt;console.log()&lt;/code&gt;
+            function.&lt;/p&gt;</code
+          >
+        </div>
+      </div>
+
+      <div class="tag-example">
+        <div class="tag-name">&lt;pre&gt;&lt;/pre&gt;</div>
+        <div class="explanation">
+          Preserves whitespace and formatting. Great for code blocks.
+          <br /><strong>Example:</strong> <br /><code>&lt;pre&gt;</code>
+          <br /><code>function hello() {</code> <br /><code
+            >&nbsp;&nbsp;console.log("Hello!");</code
+          >
+          <br /><code>}</code> <br /><code>&lt;/pre&gt;</code>
+        </div>
+      </div>
+
+      <h2>🎨 Style and Script Tags</h2>
+
+      <div class="tag-example">
+        <div class="tag-name">&lt;style&gt;&lt;/style&gt;</div>
+        <div class="explanation">
+          Contains CSS styles for the page. Usually goes in the &lt;head&gt;
+          section.
+          <br /><strong>Example:</strong>
+          <code>&lt;style&gt;h1 { color: blue; }&lt;/style&gt;</code>
+        </div>
+      </div>
+
+      <div class="tag-example">
+        <div class="tag-name">&lt;script&gt;&lt;/script&gt;</div>
+        <div class="explanation">
+          Contains or links to JavaScript code.
+          <br /><strong>Examples:</strong> <br /><code
+            >&lt;script&gt;alert("Hello!");&lt;/script&gt;</code
+          >
+          <br /><code>&lt;script src="script.js"&gt;&lt;/script&gt;</code>
+        </div>
+      </div>
+
+      <div class="tag-example">
+        <div class="tag-name">&lt;link&gt;</div>
+        <div class="explanation">
+          Links to external resources like CSS files. Self-closing tag. Goes in
+          &lt;head&gt;.
+          <br /><strong>Example:</strong>
+          <code>&lt;link rel="stylesheet" href="styles.css"&gt;</code>
+        </div>
+      </div>
+
+      <h2>🔤 Special Characters</h2>
+
+      <div class="tag-example">
+        <div class="tag-name">HTML Entities</div>
+        <div class="explanation">
+          Special codes for characters that have special meaning in HTML:
+          <br /><strong>Examples:</strong> <br /><code>&amp;lt;</code> displays
+          &lt; (less than) <br /><code>&amp;gt;</code> displays &gt; (greater
+          than) <br /><code>&amp;amp;</code> displays &amp; (ampersand)
+          <br /><code>&amp;quot;</code> displays " (quote) <br /><code
+            >&amp;copy;</code
+          >
+          displays © (copyright) <br /><code>&amp;nbsp;</code> creates a
+          non-breaking space
+        </div>
+      </div>
+
+      <div class="note">
+        <strong>🎯 Quick Tips for Beginners:</strong>
+        <ul>
+          <li>
+            <strong>Always close your tags!</strong> Every &lt;tag&gt; needs a
+            &lt;/tag&gt; (except self-closing ones)
+          </li>
+          <li>
+            <strong>Nest properly:</strong>
+            &lt;p&gt;&lt;strong&gt;text&lt;/strong&gt;&lt;/p&gt; ✓ not
+            &lt;p&gt;&lt;strong&gt;text&lt;/p&gt;&lt;/strong&gt; ✗
+          </li>
+          <li>
+            <strong>Use semantic tags:</strong> Use &lt;header&gt;, &lt;nav&gt;,
+            &lt;main&gt; instead of just &lt;div&gt; everywhere
+          </li>
+          <li><strong>Include alt text</strong> on images for accessibility</li>
+          <li>
+            <strong>Validate your HTML</strong> using online validators to catch
+            errors
+          </li>
+          <li>
+            <strong>Practice!</strong> The best way to learn is by building
+            actual web pages
+          </li>
+        </ul>
+      </div>
+
+      <div class="note">
+        <strong>📚 What's Next?</strong>
+        <br />Once you're comfortable with HTML, learn CSS for styling and
+        JavaScript for interactivity. These three languages work together to
+        create amazing websites!
+      </div>
+    </div>
+  </body>
+</html>

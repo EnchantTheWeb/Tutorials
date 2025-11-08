@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Laravel Cheat Sheet for Beginners</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        padding: 20px;
+        line-height: 1.6;
+      }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        background: white;
+        border-radius: 15px;
+        padding: 40px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      }
+      h1 {
+        color: #ff2d20;
+        text-align: center;
+        margin-bottom: 10px;
+        font-size: 2.5em;
+      }
+      .subtitle {
+        text-align: center;
+        color: #666;
+        margin-bottom: 30px;
+        font-style: italic;
+      }
+      .section {
+        margin-bottom: 40px;
+        border-left: 4px solid #ff2d20;
+        padding-left: 20px;
+      }
+      h2 {
+        color: #333;
+        margin-bottom: 15px;
+        font-size: 1.8em;
+      }
+      h3 {
+        color: #555;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        font-size: 1.3em;
+      }
+      .code-block {
+        background: #282c34;
+        color: #abb2bf;
+        padding: 15px;
+        border-radius: 8px;
+        margin: 10px 0;
+        overflow-x: auto;
+        font-family: "Courier New", monospace;
+        font-size: 14px;
+      }
+      .note {
+        background: #fff3cd;
+        border-left: 4px solid #ffc107;
+        padding: 12px;
+        margin: 10px 0;
+        border-radius: 4px;
+      }
+      .tip {
+        background: #d1ecf1;
+        border-left: 4px solid #17a2b8;
+        padding: 12px;
+        margin: 10px 0;
+        border-radius: 4px;
+      }
+      .keyword {
+        color: #e06c75;
+        font-weight: bold;
+      }
+      .string {
+        color: #98c379;
+      }
+      .function {
+        color: #61afef;
+      }
+      ul {
+        margin-left: 20px;
+        margin-top: 10px;
+      }
+      li {
+        margin-bottom: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>🚀 Laravel Cheat Sheet</h1>
+      <p class="subtitle">A Beginner-Friendly Guide to Laravel Framework</p>
+
+      <div class="section">
+        <h2>📚 What is Laravel?</h2>
+        <p>
+          Laravel is a PHP framework that makes building websites easier. Think
+          of it as a toolkit with pre-built tools and patterns that help you
+          create web applications faster and more securely.
+        </p>
+      </div>
+
+      <div class="section">
+        <h2>🎯 Routing (How URLs Work)</h2>
+        <p>
+          Routes tell Laravel what to do when someone visits a specific URL on
+          your website.
+        </p>
+
+        <h3>Basic Routes</h3>
+        <div class="code-block">
+          <span class="keyword">Route</span>::<span class="function">get</span
+          >(<span class="string">'/home'</span>, function () {
+          <span class="keyword">return</span>
+          <span class="string">'Welcome Home!'</span>; });
+        </div>
+        <div class="note">
+          <strong>What this does:</strong> When someone visits
+          yoursite.com/home, they see "Welcome Home!"
+        </div>
+
+        <h3>Different HTTP Methods</h3>
+        <div class="code-block">
+          <span class="keyword">Route</span>::<span class="function">get</span
+          >(<span class="string">'/page'</span>, ...); // View a page
+          <span class="keyword">Route</span>::<span class="function">post</span
+          >(<span class="string">'/submit'</span>, ...); // Submit a form
+          <span class="keyword">Route</span>::<span class="function">put</span
+          >(<span class="string">'/update'</span>, ...); // Update data
+          <span class="keyword">Route</span>::<span class="function"
+            >delete</span
+          >(<span class="string">'/remove'</span>, ...); // Delete data
+        </div>
+
+        <h3>Route with Parameters</h3>
+        <div class="code-block">
+          <span class="keyword">Route</span>::<span class="function">get</span
+          >(<span class="string">'/user/{id}'</span>, function ($id) {
+          <span class="keyword">return</span>
+          <span class="string">'User ID: '</span> . $id; });
+        </div>
+        <div class="note">
+          <strong>What this does:</strong> The {id} is a placeholder. If someone
+          visits /user/5, $id will equal 5.
+        </div>
+
+        <h3>Named Routes (For Easy Reference)</h3>
+        <div class="code-block">
+          <span class="keyword">Route</span>::<span class="function">get</span
+          >(<span class="string">'/profile'</span>, ...)-><span class="function"
+            >name</span
+          >(<span class="string">'profile'</span>);
+        </div>
+        <div class="tip">
+          <strong>Tip:</strong> Use named routes so if you change the URL later,
+          you don't have to update it everywhere!
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>🎮 Controllers (Organizing Your Code)</h2>
+        <p>
+          Controllers handle the logic for your routes. Instead of putting code
+          in routes, you put it in controller methods.
+        </p>
+
+        <h3>Creating a Controller</h3>
+        <div class="code-block">php artisan make:controller UserController</div>
+        <div class="note">
+          <strong>What this does:</strong> Creates a new controller file where
+          you can organize your code.
+        </div>
+
+        <h3>Basic Controller Example</h3>
+        <div class="code-block">
+          <span class="keyword">class</span> UserController
+          <span class="keyword">extends</span> Controller {
+          <span class="keyword">public function</span>
+          <span class="function">index</span>() {
+          <span class="keyword">return</span>
+          <span class="string">'List of users'</span>; }
+
+          <span class="keyword">public function</span>
+          <span class="function">show</span>($id) {
+          <span class="keyword">return</span>
+          <span class="string">'User: '</span> . $id; } }
+        </div>
+
+        <h3>Using Controller in Routes</h3>
+        <div class="code-block">
+          <span class="keyword">Route</span>::<span class="function">get</span
+          >(<span class="string">'/users'</span>, [UserController::<span
+            class="keyword"
+            >class</span
+          >, <span class="string">'index'</span>]);
+          <span class="keyword">Route</span>::<span class="function">get</span
+          >(<span class="string">'/users/{id}'</span>, [UserController::<span
+            class="keyword"
+            >class</span
+          >, <span class="string">'show'</span>]);
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>🎨 Blade Templates (Creating Views)</h2>
+        <p>
+          Blade is Laravel's templating engine. It lets you write HTML with
+          special tags for dynamic content.
+        </p>
+
+        <h3>Displaying Variables</h3>
+        <div class="code-block">
+          {{ $name }}
+          <span class="keyword"
+            >// Displays the variable and escapes HTML (safe)</span
+          >
+          {!! $html !!}
+          <span class="keyword">// Displays raw HTML (use carefully!)</span>
+        </div>
+
+        <h3>If Statements</h3>
+        <div class="code-block">
+          @<span class="keyword">if</span>($user) &lt;p&gt;Welcome, {{
+          $user-&gt;name }}!&lt;/p&gt; @<span class="keyword">elseif</span
+          >($guest) &lt;p&gt;Welcome, Guest!&lt;/p&gt; @<span class="keyword"
+            >else</span
+          >
+          &lt;p&gt;Please log in.&lt;/p&gt; @<span class="keyword">endif</span>
+        </div>
+
+        <h3>Loops</h3>
+        <div class="code-block">
+          @<span class="keyword">foreach</span>($users
+          <span class="keyword">as</span> $user) &lt;p&gt;{{ $user-&gt;name
+          }}&lt;/p&gt; @<span class="keyword">endforeach</span>
+
+          @<span class="keyword">for</span>($i = 0; $i &lt; 10; $i++)
+          &lt;p&gt;Number: {{ $i }}&lt;/p&gt; @<span class="keyword"
+            >endfor</span
+          >
+        </div>
+
+        <h3>Layout Inheritance</h3>
+        <div class="code-block">
+          <span class="keyword">// layout.blade.php (master template)</span>
+          &lt;html&gt; &lt;body&gt; @<span class="keyword">yield</span>(<span
+            class="string"
+            >'content'</span
+          >) &lt;/body&gt; &lt;/html&gt;
+
+          <span class="keyword">// page.blade.php (child template)</span>
+          @<span class="keyword">extends</span>(<span class="string"
+            >'layout'</span
+          >) @<span class="keyword">section</span>(<span class="string"
+            >'content'</span
+          >) &lt;h1&gt;My Page Content&lt;/h1&gt; @<span class="keyword"
+            >endsection</span
+          >
+        </div>
+        <div class="note">
+          <strong>What this does:</strong> Creates a master template you can
+          reuse, so you don't repeat the same HTML on every page!
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>💾 Database (Models & Eloquent)</h2>
+        <p>
+          Models represent your database tables. Eloquent is Laravel's way of
+          working with databases using simple PHP code instead of SQL.
+        </p>
+
+        <h3>Creating a Model</h3>
+        <div class="code-block">
+          php artisan make:model User -m
+          <span class="keyword">// -m also creates a migration</span>
+        </div>
+
+        <h3>Basic Model Usage</h3>
+        <div class="code-block">
+          <span class="keyword">// Get all records</span>
+          $users = User::<span class="function">all</span>();
+
+          <span class="keyword">// Find by ID</span>
+          $user = User::<span class="function">find</span>(1);
+
+          <span class="keyword">// Create new record</span>
+          $user = <span class="keyword">new</span> User(); $user->name =
+          <span class="string">'John'</span>; $user->email =
+          <span class="string">'john@example.com'</span>; $user-><span
+            class="function"
+            >save</span
+          >();
+
+          <span class="keyword">// Update record</span>
+          $user = User::<span class="function">find</span>(1); $user->name =
+          <span class="string">'Jane'</span>; $user-><span class="function"
+            >save</span
+          >();
+
+          <span class="keyword">// Delete record</span>
+          $user = User::<span class="function">find</span>(1); $user-><span
+            class="function"
+            >delete</span
+          >();
+        </div>
+
+        <h3>Querying Data</h3>
+        <div class="code-block">
+          <span class="keyword">// Where clause</span>
+          $users = User::<span class="function">where</span>(<span
+            class="string"
+            >'active'</span
+          >, 1)-><span class="function">get</span>();
+
+          <span class="keyword">// Multiple conditions</span>
+          $users = User::<span class="function">where</span>(<span
+            class="string"
+            >'active'</span
+          >, 1) -><span class="function">where</span>(<span class="string"
+            >'age'</span
+          >, <span class="string">'>'</span>, 18) -><span class="function"
+            >get</span
+          >();
+
+          <span class="keyword">// Order and limit</span>
+          $users = User::<span class="function">orderBy</span>(<span
+            class="string"
+            >'name'</span
+          >) -><span class="function">take</span>(10) -><span class="function"
+            >get</span
+          >();
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>📝 Migrations (Database Structure)</h2>
+        <p>
+          Migrations are like version control for your database. They let you
+          create and modify database tables.
+        </p>
+
+        <h3>Creating a Migration</h3>
+        <div class="code-block">
+          php artisan make:migration create_posts_table
+        </div>
+
+        <h3>Migration Example</h3>
+        <div class="code-block">
+          <span class="keyword">public function</span>
+          <span class="function">up</span>() { Schema::<span class="function"
+            >create</span
+          >(<span class="string">'posts'</span>, function (Blueprint $table) {
+          $table-><span class="function">id</span>(); $table-><span
+            class="function"
+            >string</span
+          >(<span class="string">'title'</span>); $table-><span class="function"
+            >text</span
+          >(<span class="string">'content'</span>); $table-><span
+            class="function"
+            >timestamps</span
+          >(); <span class="keyword">// Adds created_at & updated_at</span>
+          }); }
+        </div>
+
+        <h3>Running Migrations</h3>
+        <div class="code-block">
+          php artisan migrate <span class="keyword">// Run migrations</span> php
+          artisan migrate:rollback
+          <span class="keyword">// Undo last migration</span> php artisan
+          migrate:fresh
+          <span class="keyword">// Drop all tables and re-run</span>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>✅ Validation (Checking User Input)</h2>
+        <p>
+          Always validate data before saving it to prevent errors and security
+          issues.
+        </p>
+
+        <div class="code-block">
+          $validated = $request-><span class="function">validate</span>([
+          <span class="string">'name'</span> =>
+          <span class="string">'required|max:255'</span>,
+          <span class="string">'email'</span> =>
+          <span class="string">'required|email|unique:users'</span>,
+          <span class="string">'age'</span> =>
+          <span class="string">'required|integer|min:18'</span>,
+          <span class="string">'password'</span> =>
+          <span class="string">'required|min:8|confirmed'</span>, ]);
+        </div>
+
+        <h3>Common Validation Rules</h3>
+        <ul>
+          <li><strong>required</strong> - Field must have a value</li>
+          <li><strong>email</strong> - Must be a valid email format</li>
+          <li>
+            <strong>unique:table</strong> - Value must be unique in that table
+          </li>
+          <li><strong>min:5</strong> - Minimum length or value</li>
+          <li><strong>max:100</strong> - Maximum length or value</li>
+          <li>
+            <strong>confirmed</strong> - Must match a field_confirmation field
+          </li>
+          <li><strong>integer</strong> - Must be a whole number</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>🔗 Relationships (Connecting Tables)</h2>
+        <p>Define how your database tables relate to each other.</p>
+
+        <h3>One to Many (e.g., User has many Posts)</h3>
+        <div class="code-block">
+          <span class="keyword">// In User model</span>
+          <span class="keyword">public function</span>
+          <span class="function">posts</span>() {
+          <span class="keyword">return</span> $this-><span class="function"
+            >hasMany</span
+          >(Post::<span class="keyword">class</span>); }
+
+          <span class="keyword">// In Post model</span>
+          <span class="keyword">public function</span>
+          <span class="function">user</span>() {
+          <span class="keyword">return</span> $this-><span class="function"
+            >belongsTo</span
+          >(User::<span class="keyword">class</span>); }
+
+          <span class="keyword">// Using it</span>
+          $user = User::<span class="function">find</span>(1); $posts =
+          $user->posts; <span class="keyword">// Get all user's posts</span>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>🛠️ Artisan Commands (CLI Tools)</h2>
+        <p>
+          Artisan is Laravel's command-line tool. Use it to generate code and
+          manage your app.
+        </p>
+
+        <div class="code-block">
+          php artisan serve
+          <span class="keyword">// Start development server</span> php artisan
+          make:model Post <span class="keyword">// Create a model</span> php
+          artisan make:controller PostController
+          <span class="keyword">// Create controller</span> php artisan
+          make:migration create_posts_table
+          <span class="keyword">// Create migration</span> php artisan migrate
+          <span class="keyword">// Run migrations</span> php artisan route:list
+          <span class="keyword">// Show all routes</span> php artisan tinker
+          <span class="keyword">// Interactive console</span> php artisan
+          cache:clear <span class="keyword">// Clear cache</span>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>🎁 Common Helper Functions</h2>
+        <p>Laravel includes many helpful functions to make your life easier.</p>
+
+        <div class="code-block">
+          <span class="function">dd</span>($variable);
+          <span class="keyword">// Dump and die (for debugging)</span>
+          <span class="function">dump</span>($variable);
+          <span class="keyword">// Dump without stopping</span>
+          <span class="function">route</span>(<span class="string"
+            >'profile'</span
+          >); <span class="keyword">// Generate URL for named route</span>
+          <span class="function">redirect</span>(<span class="string"
+            >'/home'</span
+          >); <span class="keyword">// Redirect to a URL</span>
+          <span class="function">back</span>();
+          <span class="keyword">// Go back to previous page</span>
+          <span class="function">view</span>(<span class="string"
+            >'welcome'</span
+          >); <span class="keyword">// Return a view</span>
+          <span class="function">response</span>()-><span class="function"
+            >json</span
+          >($data); <span class="keyword">// Return JSON response</span>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>🎓 Quick Start Workflow</h2>
+        <div class="tip">
+          <strong>Typical Laravel Development Flow:</strong>
+          <ol>
+            <li>Create a migration for your database table</li>
+            <li>Run the migration to create the table</li>
+            <li>Create a model for that table</li>
+            <li>Create a controller to handle the logic</li>
+            <li>Add routes to connect URLs to controller methods</li>
+            <li>Create Blade views to display your pages</li>
+            <li>Test everything and celebrate! 🎉</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>📖 Resources for Learning</h2>
+        <ul>
+          <li><strong>Official Docs:</strong> laravel.com/docs</li>
+          <li><strong>Laracasts:</strong> Video tutorials (laracasts.com)</li>
+          <li><strong>Laravel Bootcamp:</strong> Official beginner tutorial</li>
+        </ul>
+      </div>
+
+      <p style="text-align: center; margin-top: 40px; color: #999">
+        Remember: Everyone starts as a beginner. Keep practicing, and you'll get
+        better every day! 💪
+      </p>
+    </div>
+  </body>
+</html>

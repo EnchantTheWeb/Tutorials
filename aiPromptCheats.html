@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Prompting Cheat Sheet</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        padding: 20px;
+        line-height: 1.6;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        background: white;
+        border-radius: 15px;
+        padding: 40px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      }
+
+      h1 {
+        color: #667eea;
+        text-align: center;
+        margin-bottom: 10px;
+        font-size: 2.5em;
+      }
+
+      .subtitle {
+        text-align: center;
+        color: #666;
+        margin-bottom: 30px;
+        font-style: italic;
+      }
+
+      .category {
+        margin-bottom: 40px;
+      }
+
+      .category h2 {
+        color: #764ba2;
+        border-bottom: 3px solid #667eea;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+      }
+
+      .technique-item {
+        background: #f8f9fa;
+        border-left: 4px solid #667eea;
+        padding: 15px;
+        margin-bottom: 15px;
+        border-radius: 5px;
+        transition: transform 0.2s, box-shadow 0.2s;
+      }
+
+      .technique-item:hover {
+        transform: translateX(5px);
+        box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);
+      }
+
+      .technique-name {
+        color: #e83e8c;
+        font-weight: bold;
+        font-size: 1.2em;
+      }
+
+      .technique-description {
+        color: #333;
+        margin-top: 8px;
+      }
+
+      .example {
+        background: #2d3748;
+        color: #68d391;
+        padding: 12px;
+        border-radius: 5px;
+        margin-top: 8px;
+        font-family: "Courier New", monospace;
+        font-size: 0.9em;
+        white-space: pre-wrap;
+      }
+
+      .tip {
+        background: #d1ecf1;
+        border-left: 4px solid #0c5460;
+        padding: 10px;
+        margin-top: 8px;
+        border-radius: 3px;
+        font-size: 0.9em;
+      }
+
+      .warning {
+        background: #f8d7da;
+        border-left: 4px solid #dc3545;
+        padding: 10px;
+        margin-top: 8px;
+        border-radius: 3px;
+        font-size: 0.9em;
+      }
+
+      .pro-tip {
+        background: #fff3cd;
+        border-left: 4px solid #ffc107;
+        padding: 10px;
+        margin-top: 8px;
+        border-radius: 3px;
+        font-size: 0.9em;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>🤖 AI Prompting Cheat Sheet</h1>
+      <p class="subtitle">
+        Master ChatGPT, Claude, and other AI assistants with these proven
+        techniques
+      </p>
+
+      <!-- BASIC PROMPTING -->
+      <div class="category">
+        <h2>🎯 Basic Prompting Techniques</h2>
+
+        <div class="technique-item">
+          <div class="technique-name">Be Specific and Clear</div>
+          <div class="technique-description">
+            The more specific you are, the better the response. Include details
+            about what you want, the format, length, and tone.
+          </div>
+          <div class="example">
+            ❌ Bad: "Tell me about dogs" ✅ Good: "Write a 200-word informative
+            paragraph about Golden Retrievers, focusing on their temperament and
+            why they make good family pets."
+          </div>
+          <div class="tip">
+            💡 Tip: Think of the AI as someone who's smart but needs context.
+            Don't assume it knows what you're thinking!
+          </div>
+        </div>
+
+        <div class="technique-item">
+          <div class="technique-name">Assign a Role</div>
+          <div class="technique-description">
+            Tell the AI what perspective or expertise to adopt. This shapes how
+            it responds.
+          </div>
+          <div class="example">
+            ✅ "Act as a personal trainer and create a beginner workout plan."
+            ✅ "You are a patient teacher. Explain quantum physics to a
+            10-year-old." ✅ "As a professional chef, suggest a recipe using
+            chicken and spinach."
+          </div>
+        </div>
+
+        <div class="technique-item">
+          <div class="technique-name">Specify the Format</div>
+          <div class="technique-description">
+            Tell the AI exactly how you want the information presented.
+          </div>
+          <div class="example">
+            ✅ "Give me 5 bullet points about..." ✅ "Create a table
+            comparing..." ✅ "Write this as a numbered list..." ✅ "Format this
+            as a professional email..." ✅ "Present this as a step-by-step
+            guide..."
+          </div>
+        </div>
+
+        <div class="technique-item">
+          <div class="technique-name">Set the Tone</div>
+          <div class="technique-description">
+            Specify the writing style or tone you want.
+          </div>
+          <div class="example">
+            ✅ "Explain this in a casual, friendly tone" ✅ "Write this formally
+            for a business presentation" ✅ "Make this funny and entertaining"
+            ✅ "Keep it simple and beginner-friendly" ✅ "Write this
+            persuasively"
+          </div>
+        </div>
+      </div>
+
+      <!-- ADVANCED TECHNIQUES -->
+      <div class="category">
+        <h2>🚀 Advanced Prompting Techniques</h2>
+
+        <div class="technique-item">
+          <div class="technique-name">
+            Chain of Thought (Step-by-Step Reasoning)
+          </div>
+          <div class="technique-description">
+            Ask the AI to think through problems step-by-step. Great for complex
+            tasks, math, or logic problems.
+          </div>
+          <div class="example">
+            ✅ "Let's think step by step: How would I launch a small online
+            business?" ✅ "Break this down into steps: How do I fix a leaking
+            faucet?" ✅ "Walk me through your reasoning: Why is the sky blue?"
+          </div>
+          <div class="pro-tip">
+            🌟 Pro Tip: This dramatically improves accuracy for problem-solving
+            tasks!
+          </div>
+        </div>
+
+        <div class="technique-item">
+          <div class="technique-name">Few-Shot Learning (Give Examples)</div>
+          <div class="technique-description">
+            Show the AI examples of what you want, then ask it to do the same
+            thing.
+          </div>
+          <div class="example">
+            ✅ "Here are two product descriptions I like: - [Example 1] -
+            [Example 2] Now write a similar description for my product:
+            [details]" ✅ "Convert these to past tense: run → ran eat → ate Now
+            do: swim, think, buy"
+          </div>
+        </div>
+
+        <div class="technique-item">
+          <div class="technique-name">Iterative Refinement</div>
+          <div class="technique-description">
+            Start broad, then refine. Don't expect perfection on the first try!
+          </div>
+          <div class="example">
+            Round 1: "Write a blog post about healthy eating" Round 2: "Make it
+            shorter and more casual" Round 3: "Add more specific examples" Round
+            4: "Include tips for busy parents"
+          </div>
+          <div class="tip">
+            💡 Tip: It's totally fine to say "That's good, but can you..." and
+            iterate!
+          </div>
+        </div>
+
+        <div class="technique-item">
+          <div class="technique-name">Constraints and Requirements</div>
+          <div class="technique-description">
+            Set clear boundaries and requirements for the response.
+          </div>
+          <div class="example">
+            ✅ "Write a 500-word essay (no more, no less) about..." ✅ "Use only
+            words a 5th grader would understand" ✅ "Don't use technical jargon"
+            ✅ "Keep it under 3 sentences" ✅ "Include exactly 5 examples"
+          </div>
+        </div>
+
+        <div class="technique-item">
+          <div class="technique-name">Perspective Switching</div>
+          <div class="technique-description">
+            Ask the AI to consider multiple viewpoints or approaches.
+          </div>
+          <div class="example">
+            ✅ "Give me both pros and cons of remote work" ✅ "Explain this from
+            a child's perspective, then from an expert's" ✅ "What would a
+            critic say? What would a supporter say?" ✅ "Show me 3 different
+            approaches to solving this problem"
+          </div>
+        </div>
+      </div>
+
+      <!-- TASK-SPECIFIC PROMPTS -->
+      <div class="category">
+        <h2>💼 Task-Specific Prompts</h2>
+
+        <div class="technique-item">
+          <div class="technique-name">For Writing</div>
+          <div class="example">
+            ✅ "Write a [type] about [topic] in [tone] that is [length] and
+            includes [specific elements]" ✅ "Rewrite this to be more
+            [engaging/formal/concise]" ✅ "Improve this paragraph's clarity and
+            flow: [text]" ✅ "Proofread and fix grammar in: [text]"
+          </div>
+        </div>
+
+        <div class="technique-item">
+          <div class="technique-name">For Coding</div>
+          <div class="example">
+            ✅ "Write a Python function that [does X] with comments explaining
+            each step" ✅ "Debug this code and explain what's wrong: [code]" ✅
+            "Explain this code like I'm a beginner: [code]" ✅ "Optimize this
+            code for better performance: [code]"
+          </div>
+        </div>
+
+        <div class="technique-item">
+          <div class="technique-name">For Learning</div>
+          <div class="example">
+            ✅ "Explain [concept] using simple language and an analogy" ✅ "What
+            are the key points I need to understand about [topic]?" ✅ "Create
+            quiz questions to test my understanding of [topic]" ✅ "Summarize
+            this article in 3 main points: [text]"
+          </div>
+        </div>
+
+        <div class="technique-item">
+          <div class="technique-name">For Brainstorming</div>
+          <div class="example">
+            ✅ "Generate 10 creative ideas for [project/business/event]" ✅
+            "What are some unique angles on [topic]?" ✅ "Help me think outside
+            the box about [problem]" ✅ "Give me 5 alternatives to [solution]"
+          </div>
+        </div>
+
+        <div class="technique-item">
+          <div class="technique-name">For Analysis</div>
+          <div class="example">
+            ✅ "Analyze the strengths and weaknesses of [topic]" ✅ "Compare and
+            contrast [A] and [B]" ✅ "What are the implications of [situation]?"
+            ✅ "Identify patterns in this data: [data]"
+          </div>
+        </div>
+      </div>
+
+      <!-- BEST PRACTICES -->
+      <div class="category">
+        <h2>✨ Best Practices & Tips</h2>
+
+        <div class="technique-item">
+          <div class="technique-name">Provide Context</div>
+          <div class="technique-description">
+            The AI doesn't know your background or situation unless you tell it.
+          </div>
+          <div class="example">
+            ✅ "I'm a college student with no coding experience. Help me..." ✅
+            "I'm writing this for my boss who prefers data-driven arguments..."
+            ✅ "This is for a 5-year-old's birthday party, so keep it fun..."
+          </div>
+        </div>
+
+        <div class="technique-item">
+          <div class="technique-name">Use Delimiters</div>
+          <div class="technique-description">
+            Use quotes, brackets, or other markers to separate instructions from
+            content.
+          </div>
+          <div class="example">
+            ✅ "Summarize this text: '''[your text here]'''" ✅ "Translate to
+            Spanish: ---[text]---" ✅ "Review this code: ```[code]```"
+          </div>
+        </div>
+
+        <div class="technique-item">
+          <div class="technique-name">Ask for Explanations</div>
+          <div class="technique-description">
+            Don't just accept answers—ask the AI to explain its reasoning!
+          </div>
+          <div class="example">
+            ✅ "Explain your reasoning" ✅ "Why did you suggest that?" ✅ "Walk
+            me through how you arrived at this answer" ✅ "What are the
+            assumptions behind this?"
+          </div>
+        </div>
+
+        <div class="technique-item">
+          <div class="technique-name">Correct and Guide</div>
+          <div class="technique-description">
+            If the AI misunderstands, don't start over—just clarify!
+          </div>
+          <div class="example">
+            ✅ "That's not quite what I meant. I actually want..." ✅ "Good
+            start, but can you make it more focused on..." ✅ "Actually, ignore
+            the previous request and instead..."
+          </div>
+        </div>
+
+        <div class="technique-item">
+          <div class="technique-name">Ask for Multiple Options</div>
+          <div class="technique-description">
+            Get variety and choose the best fit.
+          </div>
+          <div class="example">
+            ✅ "Give me 3 different versions of this email" ✅ "Suggest 5
+            possible titles for my blog post" ✅ "Show me 3 ways to solve this
+            problem"
+          </div>
+        </div>
+      </div>
+
+      <!-- COMMON MISTAKES -->
+      <div class="category">
+        <h2>⚠️ Common Mistakes to Avoid</h2>
+
+        <div class="technique-item">
+          <div class="technique-name">Being Too Vague</div>
+          <div class="warning">
+            ❌ "Tell me about history"<br />✅ "Summarize the main causes of
+            World War I in 5 bullet points"
+          </div>
+        </div>
+
+        <div class="technique-item">
+          <div class="technique-name">Asking Multiple Unrelated Questions</div>
+          <div class="warning">
+            ❌ "Write code for a website, explain quantum physics, and give me a
+            recipe"<br />✅ Focus on one task at a time, or clearly separate
+            requests
+          </div>
+        </div>
+
+        <div class="technique-item">
+          <div class="technique-name">Not Verifying Information</div>
+          <div class="warning">
+            ⚠️ AI can make mistakes! Always verify important facts, especially
+            for:
+          </div>
+          <div class="technique-description">
+            • Medical advice<br />
+            • Legal information<br />
+            • Financial decisions<br />
+            • Current events/recent facts<br />
+            • Code that will be used in production
+          </div>
+        </div>
+
+        <div class="technique-item">
+          <div class="technique-name">Expecting Mind Reading</div>
+          <div class="warning">
+            ❌ "Make it better" (Better how?)<br />✅ "Make it more concise" or
+            "Add more technical details"
+          </div>
+        </div>
+      </div>
+
+      <!-- PROMPT TEMPLATES -->
+      <div class="category">
+        <h2>📋 Ready-to-Use Prompt Templates</h2>
+
+        <div class="technique-item">
+          <div class="technique-name">The Complete Prompt Formula</div>
+          <div class="example">
+            [Role]: You are a [profession/expert] [Task]: I need you to
+            [specific action] [Context]: This is for [situation/audience]
+            [Format]: Present it as [format type] [Tone]: Use a [tone] tone
+            [Constraints]: [specific requirements] [Example]: Here's an example:
+            [if applicable]
+          </div>
+        </div>
+
+        <div class="technique-item">
+          <div class="technique-name">Quick Templates</div>
+          <div class="example">
+            📝 Writing: "Write a [type] about [topic] for [audience] in [tone],
+            approximately [length], covering [key points]" 💻 Coding: "Create a
+            [language] [function/script] that [purpose]. Include comments and
+            handle [edge cases]" 📚 Learning: "Explain [concept] to someone with
+            [experience level] using [analogy/example]. Then give me 3 practice
+            questions" 🎨 Creative: "Generate [number] creative
+            [ideas/names/concepts] for [purpose] targeting [audience] with a
+            [style] vibe" 🔍 Analysis: "Analyze [topic] considering [factors].
+            Provide [format] highlighting [specific aspects]"
+          </div>
+        </div>
+      </div>
+
+      <!-- FINAL TIPS -->
+      <div class="category">
+        <h2>🎓 Final Pro Tips</h2>
+
+        <div class="technique-item">
+          <div class="pro-tip">
+            <strong>1. Experiment!</strong> Try different phrasings if you don't
+            get what you want the first time.<br /><br />
+            <strong>2. Build on Responses:</strong> Use the AI's output as a
+            starting point and refine it.<br /><br />
+            <strong>3. Be Conversational:</strong> You can chat naturally! Say
+            "thanks," ask follow-ups, correct mistakes.<br /><br />
+            <strong>4. Save Good Prompts:</strong> When you find a prompt that
+            works well, save it for future use!<br /><br />
+            <strong>5. Break Down Complex Tasks:</strong> If something feels too
+            big, break it into smaller steps.<br /><br />
+            <strong>6. Use Memory:</strong> The AI remembers your conversation,
+            so reference earlier parts: "Using the format you showed
+            earlier..."<br /><br />
+            <strong>7. Ask for Structure First:</strong> For big projects, ask
+            for an outline or plan before diving in.<br /><br />
+            <strong>8. Combine Techniques:</strong> Use multiple strategies
+            together for best results!
+          </div>
+        </div>
+      </div>
+
+      <div
+        style="
+          text-align: center;
+          margin-top: 40px;
+          padding: 20px;
+          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          color: white;
+          border-radius: 10px;
+        "
+      >
+        <h3>Remember: AI is a tool, not magic! 🪄</h3>
+        <p>
+          The better your prompt, the better the result. Practice makes perfect!
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

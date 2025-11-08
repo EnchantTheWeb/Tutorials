@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React Cheat Sheet for Beginners</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 20px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: #333;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+      }
+
+      .header {
+        background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        color: white;
+        padding: 30px;
+        text-align: center;
+      }
+
+      .header h1 {
+        margin: 0;
+        font-size: 2.5em;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      }
+
+      .content {
+        padding: 30px;
+      }
+
+      .section {
+        margin-bottom: 40px;
+        background: #f8f9fa;
+        border-radius: 10px;
+        padding: 25px;
+        border-left: 5px solid #4facfe;
+      }
+
+      .section h2 {
+        color: #2c3e50;
+        margin-top: 0;
+        border-bottom: 2px solid #4facfe;
+        padding-bottom: 10px;
+      }
+
+      .code-block {
+        background: #2d3748;
+        color: #e2e8f0;
+        padding: 20px;
+        border-radius: 8px;
+        overflow-x: auto;
+        margin: 15px 0;
+        font-family: "Courier New", monospace;
+        position: relative;
+      }
+
+      .code-block::before {
+        content: "React Code";
+        position: absolute;
+        top: 5px;
+        right: 10px;
+        font-size: 0.8em;
+        color: #4facfe;
+        background: rgba(79, 172, 254, 0.1);
+        padding: 2px 8px;
+        border-radius: 4px;
+      }
+
+      .explanation {
+        background: #e8f4fd;
+        padding: 15px;
+        border-radius: 6px;
+        border-left: 4px solid #4facfe;
+        margin: 10px 0;
+      }
+
+      .tip {
+        background: #fff3cd;
+        border: 1px solid #ffeaa7;
+        padding: 15px;
+        border-radius: 6px;
+        margin: 15px 0;
+      }
+
+      .tip::before {
+        content: "💡 Tip: ";
+        font-weight: bold;
+        color: #856404;
+      }
+
+      .important {
+        background: #f8d7da;
+        border: 1px solid #f5c6cb;
+        padding: 15px;
+        border-radius: 6px;
+        margin: 15px 0;
+      }
+
+      .important::before {
+        content: "⚠️ Important: ";
+        font-weight: bold;
+        color: #721c24;
+      }
+
+      .highlight {
+        background: #fff;
+        padding: 2px 6px;
+        border-radius: 3px;
+        font-family: monospace;
+        border: 1px solid #ddd;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+        margin: 20px 0;
+      }
+
+      .card {
+        background: white;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        border: 1px solid #e1e5e9;
+      }
+
+      .card h3 {
+        margin-top: 0;
+        color: #4facfe;
+      }
+
+      ul {
+        padding-left: 20px;
+      }
+
+      li {
+        margin-bottom: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>🚀 React Cheat Sheet for Beginners</h1>
+        <p>Your complete guide to React elements, components, and concepts</p>
+      </div>
+
+      <div class="content">
+        <div class="section">
+          <h2>What is React?</h2>
+          <div class="explanation">
+            React is a JavaScript library for building user interfaces. Instead
+            of writing plain HTML, you write components that can be reused and
+            updated dynamically. Think of it like building with LEGO blocks -
+            you create small pieces (components) that you can combine to build
+            bigger things!
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>JSX Elements (HTML-like tags in React)</h2>
+          <p>
+            In React, you write JSX which looks like HTML but has some
+            differences:
+          </p>
+
+          <div class="grid">
+            <div class="card">
+              <h3>&lt;div&gt;</h3>
+              <div class="code-block">
+                &lt;div className="container"&gt; &lt;p&gt;Hello
+                World!&lt;/p&gt; &lt;/div&gt;
+              </div>
+              <p>
+                A container element, same as HTML div. Notice we use
+                <span class="highlight">className</span> instead of
+                <span class="highlight">class</span>!
+              </p>
+            </div>
+
+            <div class="card">
+              <h3>&lt;span&gt;</h3>
+              <div class="code-block">
+                &lt;span style={{color: 'blue'}}&gt; Inline text &lt;/span&gt;
+              </div>
+              <p>
+                Inline text element. Styles use double curly braces and
+                camelCase!
+              </p>
+            </div>
+
+            <div class="card">
+              <h3>&lt;h1&gt; to &lt;h6&gt;</h3>
+              <div class="code-block">
+                &lt;h1&gt;Main Title&lt;/h1&gt; &lt;h2&gt;Subtitle&lt;/h2&gt;
+                &lt;h3&gt;Section Title&lt;/h3&gt;
+              </div>
+              <p>
+                Heading elements for titles and subtitles, just like in HTML.
+              </p>
+            </div>
+
+            <div class="card">
+              <h3>&lt;p&gt;</h3>
+              <div class="code-block">
+                &lt;p&gt;This is a paragraph of text.&lt;/p&gt;
+              </div>
+              <p>Paragraph element for blocks of text.</p>
+            </div>
+
+            <div class="card">
+              <h3>&lt;button&gt;</h3>
+              <div class="code-block">
+                &lt;button onClick={handleClick}&gt; Click me! &lt;/button&gt;
+              </div>
+              <p>
+                Button element. Notice
+                <span class="highlight">onClick</span> (camelCase) instead of
+                <span class="highlight">onclick</span>!
+              </p>
+            </div>
+
+            <div class="card">
+              <h3>&lt;input&gt;</h3>
+              <div class="code-block">
+                &lt;input type="text" value={inputValue} onChange={handleChange}
+                /&gt;
+              </div>
+              <p>
+                Input field. In React, inputs are usually "controlled" with
+                state.
+              </p>
+            </div>
+
+            <div class="card">
+              <h3>&lt;img&gt;</h3>
+              <div class="code-block">
+                &lt;img src="/image.jpg" alt="Description" /&gt;
+              </div>
+              <p>Image element. Always include alt text for accessibility!</p>
+            </div>
+
+            <div class="card">
+              <h3>&lt;ul&gt; &amp; &lt;li&gt;</h3>
+              <div class="code-block">
+                &lt;ul&gt; &lt;li key="1"&gt;Item 1&lt;/li&gt; &lt;li
+                key="2"&gt;Item 2&lt;/li&gt; &lt;/ul&gt;
+              </div>
+              <p>
+                Unordered list and list items. Each
+                <span class="highlight">li</span> needs a unique
+                <span class="highlight">key</span> prop!
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>React Components</h2>
+          <div class="explanation">
+            Components are the building blocks of React apps. They're like
+            custom HTML tags that you create!
+          </div>
+
+          <h3>Function Component (Most Common)</h3>
+          <div class="code-block">
+            function MyComponent() { return ( &lt;div&gt; &lt;h1&gt;Hello from
+            my component!&lt;/h1&gt; &lt;/div&gt; ); } // Using the component
+            &lt;MyComponent /&gt;
+          </div>
+
+          <h3>Component with Props (Properties)</h3>
+          <div class="code-block">
+            function Greeting(props) { return &lt;h1&gt;Hello,
+            {props.name}!&lt;/h1&gt;; } // Using it &lt;Greeting name="Alice"
+            /&gt;
+          </div>
+
+          <div class="tip">
+            Props are like function parameters - they let you pass data into
+            components!
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>React Hooks (Special Functions)</h2>
+
+          <h3>useState - Managing State</h3>
+          <div class="code-block">
+            import { useState } from 'react'; function Counter() { const [count,
+            setCount] = useState(0); return ( &lt;div&gt; &lt;p&gt;Count:
+            {count}&lt;/p&gt; &lt;button onClick={() =&gt; setCount(count +
+            1)}&gt; Increase &lt;/button&gt; &lt;/div&gt; ); }
+          </div>
+          <div class="explanation">
+            <span class="highlight">useState</span> lets you add state
+            (changeable data) to your component. It returns the current value
+            and a function to update it.
+          </div>
+
+          <h3>useEffect - Side Effects</h3>
+          <div class="code-block">
+            import { useEffect, useState } from 'react'; function DataLoader() {
+            const [data, setData] = useState(null); useEffect(() =&gt; { // This
+            runs when component loads console.log('Component mounted!'); //
+            Cleanup function (optional) return () =&gt; { console.log('Component
+            unmounting!'); }; }, []); // Empty array = run once return
+            &lt;div&gt;{data}&lt;/div&gt;; }
+          </div>
+          <div class="explanation">
+            <span class="highlight">useEffect</span> lets you perform side
+            effects like API calls, subscriptions, or manually changing the DOM.
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>Event Handling</h2>
+          <div class="grid">
+            <div class="card">
+              <h3>onClick</h3>
+              <div class="code-block">
+                &lt;button onClick={handleClick}&gt; Click me &lt;/button&gt;
+              </div>
+              <p>Handles button clicks</p>
+            </div>
+
+            <div class="card">
+              <h3>onChange</h3>
+              <div class="code-block">
+                &lt;input onChange={handleChange} value={text} /&gt;
+              </div>
+              <p>Handles input changes</p>
+            </div>
+
+            <div class="card">
+              <h3>onSubmit</h3>
+              <div class="code-block">
+                &lt;form onSubmit={handleSubmit}&gt; &lt;input type="submit"
+                /&gt; &lt;/form&gt;
+              </div>
+              <p>Handles form submissions</p>
+            </div>
+
+            <div class="card">
+              <h3>onMouseOver</h3>
+              <div class="code-block">
+                &lt;div onMouseOver={handleHover}&gt; Hover me! &lt;/div&gt;
+              </div>
+              <p>Handles mouse hover events</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>Conditional Rendering</h2>
+          <h3>Using && Operator</h3>
+          <div class="code-block">
+            function WelcomeMessage({ isLoggedIn }) { return ( &lt;div&gt;
+            {isLoggedIn && &lt;h1&gt;Welcome back!&lt;/h1&gt;} {!isLoggedIn &&
+            &lt;h1&gt;Please log in&lt;/h1&gt;} &lt;/div&gt; ); }
+          </div>
+
+          <h3>Using Ternary Operator</h3>
+          <div class="code-block">
+            function StatusMessage({ isOnline }) { return ( &lt;div&gt;
+            {isOnline ? ( &lt;span style={{color:
+            'green'}}&gt;Online&lt;/span&gt; ) : ( &lt;span style={{color:
+            'red'}}&gt;Offline&lt;/span&gt; )} &lt;/div&gt; ); }
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>Lists and Keys</h2>
+          <div class="code-block">
+            function TodoList({ todos }) { return ( &lt;ul&gt; {todos.map(todo
+            =&gt; ( &lt;li key={todo.id}&gt; {todo.text} &lt;/li&gt; ))}
+            &lt;/ul&gt; ); } // Using it const todos = [ { id: 1, text: 'Learn
+            React' }, { id: 2, text: 'Build an app' } ]; &lt;TodoList
+            todos={todos} /&gt;
+          </div>
+          <div class="important">
+            Always provide a unique <span class="highlight">key</span> prop when
+            rendering lists. This helps React track changes efficiently!
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>Common Patterns</h2>
+
+          <h3>Handling Form Input</h3>
+          <div class="code-block">
+            function ContactForm() { const [name, setName] = useState(''); const
+            [email, setEmail] = useState(''); const handleSubmit = (e) =&gt; {
+            e.preventDefault(); console.log('Name:', name, 'Email:', email); };
+            return ( &lt;form onSubmit={handleSubmit}&gt; &lt;input type="text"
+            placeholder="Name" value={name} onChange={(e) =&gt;
+            setName(e.target.value)} /&gt; &lt;input type="email"
+            placeholder="Email" value={email} onChange={(e) =&gt;
+            setEmail(e.target.value)} /&gt; &lt;button
+            type="submit"&gt;Submit&lt;/button&gt; &lt;/form&gt; ); }
+          </div>
+
+          <h3>Loading State</h3>
+          <div class="code-block">
+            function DataComponent() { const [data, setData] = useState(null);
+            const [loading, setLoading] = useState(true); useEffect(() =&gt; {
+            // Simulate API call setTimeout(() =&gt; { setData('Hello from
+            API!'); setLoading(false); }, 2000); }, []); return ( &lt;div&gt;
+            {loading ? ( &lt;p&gt;Loading...&lt;/p&gt; ) : (
+            &lt;p&gt;{data}&lt;/p&gt; )} &lt;/div&gt; ); }
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>Key Differences from HTML</h2>
+          <div class="grid">
+            <div class="card">
+              <h3>Attributes</h3>
+              <ul>
+                <li>
+                  <span class="highlight">class</span> →
+                  <span class="highlight">className</span>
+                </li>
+                <li>
+                  <span class="highlight">for</span> →
+                  <span class="highlight">htmlFor</span>
+                </li>
+                <li>
+                  <span class="highlight">onclick</span> →
+                  <span class="highlight">onClick</span>
+                </li>
+                <li>All event handlers use camelCase</li>
+              </ul>
+            </div>
+
+            <div class="card">
+              <h3>Styles</h3>
+              <div class="code-block">
+                // HTML style="color: red; font-size: 16px;" // React
+                style={{color: 'red', fontSize: '16px'}}
+              </div>
+              <p>Styles are objects with camelCase properties</p>
+            </div>
+
+            <div class="card">
+              <h3>Self-Closing Tags</h3>
+              <div class="code-block">
+                // HTML &lt;input type="text"&gt; &lt;br&gt; // React &lt;input
+                type="text" /&gt; &lt;br /&gt;
+              </div>
+              <p>All tags must be closed in JSX</p>
+            </div>
+
+            <div class="card">
+              <h3>JavaScript Expressions</h3>
+              <div class="code-block">
+                const name = 'World'; const element = &lt;h1&gt;Hello,
+                {name}!&lt;/h1&gt;;
+              </div>
+              <p>Use curly braces {} to embed JavaScript</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>Complete Example App</h2>
+          <div class="code-block">
+            import { useState } from 'react'; function App() { const [todos,
+            setTodos] = useState([]); const [inputValue, setInputValue] =
+            useState(''); const addTodo = () =&gt; { if (inputValue.trim()) {
+            setTodos([...todos, { id: Date.now(), text: inputValue, completed:
+            false }]); setInputValue(''); } }; const toggleTodo = (id) =&gt; {
+            setTodos(todos.map(todo =&gt; todo.id === id ? {...todo, completed:
+            !todo.completed} : todo )); }; return ( &lt;div className="app"&gt;
+            &lt;h1&gt;My Todo App&lt;/h1&gt; &lt;div&gt; &lt;input type="text"
+            value={inputValue} onChange={(e) =&gt;
+            setInputValue(e.target.value)} placeholder="Add a todo..." /&gt;
+            &lt;button onClick={addTodo}&gt;Add&lt;/button&gt; &lt;/div&gt;
+            &lt;ul&gt; {todos.map(todo =&gt; ( &lt;li key={todo.id} onClick={()
+            =&gt; toggleTodo(todo.id)} style={{ textDecoration: todo.completed ?
+            'line-through' : 'none', cursor: 'pointer' }} &gt; {todo.text}
+            &lt;/li&gt; ))} &lt;/ul&gt; &lt;/div&gt; ); } export default App;
+          </div>
+          <div class="explanation">
+            This example shows a complete Todo app using useState, event
+            handling, conditional rendering, and lists!
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>Quick Tips for Beginners</h2>
+          <div class="tip">
+            Start with function components - they're simpler and more modern
+            than class components.
+          </div>
+          <div class="tip">
+            Always use <span class="highlight">useState</span> for data that can
+            change, and pass static data as props.
+          </div>
+          <div class="tip">
+            Remember that React re-renders components when state changes - this
+            is how your UI updates!
+          </div>
+          <div class="tip">
+            Use the React Developer Tools browser extension to debug your
+            components.
+          </div>
+          <div class="important">
+            Components must return exactly one parent element. Use a
+            <span class="highlight">&lt;div&gt;</span> or React Fragment
+            <span class="highlight">&lt;&gt;&lt;/&gt;</span> to wrap multiple
+            elements.
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

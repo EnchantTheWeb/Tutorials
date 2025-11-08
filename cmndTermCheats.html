@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Command Line/Terminal Cheat Sheet</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background: #0c0c0c;
+        color: #00ff00;
+        font-family: "Courier New", monospace;
+        padding: 20px;
+        line-height: 1.6;
+      }
+
+      .terminal {
+        max-width: 1200px;
+        margin: 0 auto;
+        background: #1a1a1a;
+        border: 2px solid #00ff00;
+        border-radius: 5px;
+        box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
+      }
+
+      .terminal-header {
+        background: #00ff00;
+        color: #000;
+        padding: 10px 15px;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .terminal-button {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: #ff0000;
+      }
+
+      .terminal-button:nth-child(2) {
+        background: #ffff00;
+      }
+      .terminal-button:nth-child(3) {
+        background: #00ff00;
+      }
+
+      .terminal-body {
+        padding: 20px;
+      }
+
+      .command-group {
+        margin-top: 20px;
+      }
+
+      .command-group:first-child {
+        margin-top: 0;
+      }
+
+      .command {
+        color: #ffff00;
+        font-weight: bold;
+        margin-top: 15px;
+      }
+
+      .command:first-child {
+        margin-top: 0;
+      }
+
+      .description {
+        color: #00ff00;
+        margin-left: 20px;
+        font-size: 0.95em;
+      }
+
+      .example {
+        color: #00ccff;
+        margin-left: 20px;
+      }
+
+      .note {
+        color: #ff8800;
+        margin-left: 20px;
+        font-style: italic;
+      }
+
+      .section-title {
+        color: #ffff00;
+        font-size: 1.2em;
+        margin-top: 30px;
+        margin-bottom: 10px;
+        border-bottom: 1px solid #00ff00;
+        padding-bottom: 5px;
+      }
+
+      .section-title:first-child {
+        margin-top: 0;
+      }
+
+      .intro {
+        color: #ffffff;
+        margin-bottom: 20px;
+        padding: 15px;
+        background: #0a0a0a;
+        border-left: 3px solid #00ff00;
+      }
+
+      .cursor {
+        animation: blink 1s infinite;
+      }
+
+      @keyframes blink {
+        0%,
+        49% {
+          opacity: 1;
+        }
+        50%,
+        100% {
+          opacity: 0;
+        }
+      }
+
+      .highlight {
+        color: #ff00ff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="terminal">
+      <div class="terminal-header">
+        <div class="terminal-button"></div>
+        <div class="terminal-button"></div>
+        <div class="terminal-button"></div>
+        <span>user@terminal:~$ COMMAND_LINE_CHEATSHEET</span>
+      </div>
+      <div class="terminal-body">
+        <div class="intro">
+          <div style="color: #ffff00; font-weight: bold; margin-bottom: 10px">
+            WELCOME TO THE COMMAND LINE!
+          </div>
+          <div>
+            The command line (also called terminal, shell, or console) is a
+            text-based way to interact with your computer. Instead of clicking
+            icons, you type commands. It's powerful and once you learn it,
+            you'll feel like a coding wizard! 🧙‍♂️
+          </div>
+          <div style="margin-top: 10px; color: #ff8800">
+            NOTE: Commands work slightly differently on Windows (Command
+            Prompt/PowerShell) vs Mac/Linux (Terminal). This guide shows both!
+          </div>
+        </div>
+
+        <div class="section-title">
+          ═══════════════════ NAVIGATION COMMANDS ═══════════════════
+        </div>
+
+        <div class="command">pwd</div>
+        <div class="description">
+          Print Working Directory - Shows where you currently are
+        </div>
+        <div class="example">$ pwd</div>
+        <div class="example">/Users/yourname/Documents</div>
+        <div class="note">Windows equivalent: cd (with no arguments)</div>
+
+        <div class="command">ls</div>
+        <div class="description">
+          List - Shows all files and folders in current directory
+        </div>
+        <div class="example">$ ls</div>
+        <div class="example">file1.txt file2.txt my-folder</div>
+        <div class="note">Windows equivalent: dir</div>
+        <div class="note">
+          Tip: Use "ls -la" to see hidden files and details
+        </div>
+
+        <div class="command">cd</div>
+        <div class="description">
+          Change Directory - Move to a different folder
+        </div>
+        <div class="example">$ cd Documents</div>
+        <div class="example">$ cd /Users/yourname/Desktop</div>
+        <div class="example">$ cd .. (go up one level)</div>
+        <div class="example">$ cd ~ (go to home directory)</div>
+        <div class="note">Works on both Windows and Mac/Linux!</div>
+
+        <div class="command">clear</div>
+        <div class="description">Clears the terminal screen</div>
+        <div class="example">$ clear</div>
+        <div class="note">Windows equivalent: cls</div>
+
+        <div class="section-title">
+          ═══════════════════ FILE OPERATIONS ═══════════════════
+        </div>
+
+        <div class="command">touch</div>
+        <div class="description">Creates a new empty file</div>
+        <div class="example">$ touch newfile.txt</div>
+        <div class="example">$ touch index.html style.css</div>
+        <div class="note">Windows equivalent: type nul > filename.txt</div>
+
+        <div class="command">cat</div>
+        <div class="description">Shows the contents of a file</div>
+        <div class="example">$ cat myfile.txt</div>
+        <div class="note">Windows equivalent: type filename.txt</div>
+
+        <div class="command">cp</div>
+        <div class="description">Copy - Copies files or folders</div>
+        <div class="example">$ cp file.txt copy.txt (copy a file)</div>
+        <div class="example">$ cp -r folder1 folder2 (copy entire folder)</div>
+        <div class="note">
+          Windows equivalent: copy (for files), xcopy (for folders)
+        </div>
+
+        <div class="command">mv</div>
+        <div class="description">Move - Moves OR renames files/folders</div>
+        <div class="example">$ mv oldname.txt newname.txt (rename)</div>
+        <div class="example">$ mv file.txt Documents/ (move to Documents)</div>
+        <div class="note">
+          Windows equivalent: move (for moving), ren (for renaming)
+        </div>
+
+        <div class="command">rm</div>
+        <div class="description">
+          Remove - Deletes files (BE CAREFUL! This is permanent!)
+        </div>
+        <div class="example">$ rm file.txt (delete a file)</div>
+        <div class="example">$ rm -r folder (delete entire folder)</div>
+        <div class="note">
+          Windows equivalent: del (files), rmdir /s (folders)
+        </div>
+        <div class="note" style="color: #ff0000">
+          ⚠️ WARNING: Deleted files don't go to trash - they're gone forever!
+        </div>
+
+        <div class="section-title">
+          ═══════════════════ FOLDER OPERATIONS ═══════════════════
+        </div>
+
+        <div class="command">mkdir</div>
+        <div class="description">Make Directory - Creates a new folder</div>
+        <div class="example">$ mkdir my-project</div>
+        <div class="example">
+          $ mkdir folder1 folder2 folder3 (create multiple)
+        </div>
+        <div class="note">Works on both Windows and Mac/Linux!</div>
+
+        <div class="command">rmdir</div>
+        <div class="description">
+          Remove Directory - Deletes an EMPTY folder
+        </div>
+        <div class="example">$ rmdir old-folder</div>
+        <div class="note">
+          Use "rm -r" on Mac/Linux or "rmdir /s" on Windows to delete non-empty
+          folders
+        </div>
+
+        <div class="section-title">
+          ═══════════════════ VIEWING & SEARCHING ═══════════════════
+        </div>
+
+        <div class="command">less</div>
+        <div class="description">
+          View file contents page by page (good for long files)
+        </div>
+        <div class="example">$ less longfile.txt</div>
+        <div class="note">
+          Press Q to quit, Space to scroll down, arrows to navigate
+        </div>
+        <div class="note">Windows equivalent: more</div>
+
+        <div class="command">head</div>
+        <div class="description">Shows the first 10 lines of a file</div>
+        <div class="example">$ head file.txt</div>
+        <div class="example">$ head -n 20 file.txt (show first 20 lines)</div>
+        <div class="note">Mac/Linux only</div>
+
+        <div class="command">tail</div>
+        <div class="description">Shows the last 10 lines of a file</div>
+        <div class="example">$ tail file.txt</div>
+        <div class="example">
+          $ tail -f logfile.txt (follow file as it updates)
+        </div>
+        <div class="note">Mac/Linux only</div>
+
+        <div class="command">grep</div>
+        <div class="description">Searches for text within files</div>
+        <div class="example">$ grep "search term" file.txt</div>
+        <div class="example">
+          $ grep -r "function" . (search all files in current folder)
+        </div>
+        <div class="note">Windows equivalent: findstr</div>
+
+        <div class="command">find</div>
+        <div class="description">Finds files and folders by name</div>
+        <div class="example">$ find . -name "*.txt" (find all .txt files)</div>
+        <div class="example">
+          $ find . -type d -name "project" (find folders named project)
+        </div>
+        <div class="note">Windows equivalent: dir /s filename</div>
+
+        <div class="section-title">
+          ═══════════════════ PERMISSIONS (Mac/Linux) ═══════════════════
+        </div>
+
+        <div class="command">chmod</div>
+        <div class="description">
+          Change file permissions (who can read/write/execute)
+        </div>
+        <div class="example">$ chmod +x script.sh (make file executable)</div>
+        <div class="example">
+          $ chmod 755 file.txt (set specific permissions)
+        </div>
+        <div class="note">Mac/Linux only</div>
+
+        <div class="command">sudo</div>
+        <div class="description">Run command as administrator (superuser)</div>
+        <div class="example">$ sudo apt-get install package</div>
+        <div class="note">
+          Mac/Linux only - You'll be asked for your password
+        </div>
+        <div class="note">Windows equivalent: Run as Administrator</div>
+
+        <div class="section-title">
+          ═══════════════════ SYSTEM INFORMATION ═══════════════════
+        </div>
+
+        <div class="command">whoami</div>
+        <div class="description">Shows your current username</div>
+        <div class="example">$ whoami</div>
+        <div class="example">yourname</div>
+        <div class="note">Works on both Windows and Mac/Linux!</div>
+
+        <div class="command">date</div>
+        <div class="description">Shows current date and time</div>
+        <div class="example">$ date</div>
+        <div class="note">Works on both Windows and Mac/Linux!</div>
+
+        <div class="command">history</div>
+        <div class="description">Shows your command history</div>
+        <div class="example">$ history</div>
+        <div class="note">Mac/Linux - shows recent commands you've typed</div>
+        <div class="note">Windows equivalent: doskey /history</div>
+
+        <div class="command">echo</div>
+        <div class="description">Prints text to the screen</div>
+        <div class="example">$ echo "Hello, World!"</div>
+        <div class="example">Hello, World!</div>
+        <div class="note">Works on both Windows and Mac/Linux!</div>
+
+        <div class="section-title">
+          ═══════════════════ PROGRAMMING & TOOLS ═══════════════════
+        </div>
+
+        <div class="command">python / python3</div>
+        <div class="description">Runs Python programs</div>
+        <div class="example">$ python script.py</div>
+        <div class="example">
+          $ python3 script.py (for Python 3 specifically)
+        </div>
+
+        <div class="command">node</div>
+        <div class="description">Runs JavaScript with Node.js</div>
+        <div class="example">$ node app.js</div>
+
+        <div class="command">npm</div>
+        <div class="description">
+          Node Package Manager - installs JavaScript packages
+        </div>
+        <div class="example">$ npm install package-name</div>
+        <div class="example">$ npm start (starts your project)</div>
+
+        <div class="command">git</div>
+        <div class="description">Version control commands</div>
+        <div class="example">$ git clone URL (download a repository)</div>
+        <div class="example">$ git add . (stage changes)</div>
+        <div class="example">$ git commit -m "message" (save changes)</div>
+        <div class="example">$ git push (upload to remote repository)</div>
+
+        <div class="command">code</div>
+        <div class="description">Opens Visual Studio Code editor</div>
+        <div class="example">$ code . (open current folder in VS Code)</div>
+        <div class="example">$ code filename.txt (open specific file)</div>
+
+        <div class="section-title">
+          ═══════════════════ SHORTCUTS & TRICKS ═══════════════════
+        </div>
+
+        <div class="command">Tab Key</div>
+        <div class="description">Auto-completes file/folder names</div>
+        <div class="note">
+          Start typing and press Tab - it'll finish the name for you!
+        </div>
+
+        <div class="command">Up/Down Arrows</div>
+        <div class="description">Cycle through previous commands</div>
+        <div class="note">
+          Press Up to see your last command, keep pressing to go back further
+        </div>
+
+        <div class="command">Ctrl + C</div>
+        <div class="description">Stops/cancels the current running command</div>
+        <div class="note">
+          Use this when something is stuck or taking too long
+        </div>
+
+        <div class="command">Ctrl + A</div>
+        <div class="description">Moves cursor to beginning of line</div>
+
+        <div class="command">Ctrl + E</div>
+        <div class="description">Moves cursor to end of line</div>
+
+        <div class="command">Ctrl + L</div>
+        <div class="description">
+          Clears the screen (like the "clear" command)
+        </div>
+
+        <div class="command">Ctrl + D</div>
+        <div class="description">Exits the terminal</div>
+
+        <div class="section-title">
+          ═══════════════════ COMBINING COMMANDS ═══════════════════
+        </div>
+
+        <div class="command">| (pipe)</div>
+        <div class="description">Sends output of one command to another</div>
+        <div class="example">
+          $ ls | grep "test" (list files, then search for "test")
+        </div>
+
+        <div class="command">&gt; (redirect)</div>
+        <div class="description">Saves command output to a file</div>
+        <div class="example">
+          $ ls > filelist.txt (save file list to a text file)
+        </div>
+        <div class="note">This OVERWRITES the file!</div>
+
+        <div class="command">&gt;&gt; (append)</div>
+        <div class="description">Adds command output to end of a file</div>
+        <div class="example">
+          $ echo "new line" >> file.txt (add text to end of file)
+        </div>
+
+        <div class="command">&& (and)</div>
+        <div class="description">
+          Runs second command only if first succeeds
+        </div>
+        <div class="example">
+          $ mkdir project && cd project (create folder and enter it)
+        </div>
+
+        <div class="section-title">
+          ═══════════════════ BEGINNER TIPS ═══════════════════
+        </div>
+
+        <div class="note" style="margin-top: 0">
+          💡 Commands are case-sensitive! "File.txt" is different from
+          "file.txt"
+        </div>
+        <div class="note">
+          💡 Use quotes around filenames with spaces: "my file.txt"
+        </div>
+        <div class="note">
+          💡 . means current directory, .. means parent directory
+        </div>
+        <div class="note">💡 ~ means your home directory (/Users/yourname)</div>
+        <div class="note">💡 * is a wildcard (*.txt means all .txt files)</div>
+        <div class="note">
+          💡 Always double-check before using "rm" - there's no undo!
+        </div>
+        <div class="note">
+          💡 Type "man commandname" (Mac/Linux) to see the manual for any
+          command
+        </div>
+        <div class="note">
+          💡 Practice in a test folder first so you don't accidentally delete
+          important files!
+        </div>
+
+        <div class="command" style="margin-top: 30px; color: #00ff00">
+          Ready to start your command line journey? Open your terminal and try
+          these commands! 🚀
+        </div>
+
+        <div class="command" style="margin-top: 20px">
+          $ <span class="cursor">_</span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
