@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tailwind CSS Cheat Sheet for Beginners</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background: linear-gradient(135deg, #ff006e 0%, #d60093 100%);
+        min-height: 100vh;
+        padding: 20px;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        overflow: hidden;
+      }
+
+      header {
+        background: linear-gradient(135deg, #ff006e 0%, #d60093 100%);
+        color: white;
+        padding: 40px;
+        text-align: center;
+      }
+
+      header h1 {
+        font-size: 2.5em;
+        margin-bottom: 10px;
+      }
+
+      header p {
+        font-size: 1.1em;
+        opacity: 0.9;
+      }
+
+      .content {
+        padding: 40px;
+      }
+
+      .section {
+        margin-bottom: 50px;
+      }
+
+      .section h2 {
+        color: #ff006e;
+        font-size: 2em;
+        margin-bottom: 20px;
+        border-bottom: 3px solid #ff006e;
+        padding-bottom: 10px;
+      }
+
+      .concept {
+        background: #f8f9fa;
+        border-left: 5px solid #ff006e;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 5px;
+      }
+
+      .concept h3 {
+        color: #d60093;
+        margin-bottom: 10px;
+        font-size: 1.3em;
+      }
+
+      .concept p {
+        margin-bottom: 15px;
+        color: #555;
+      }
+
+      .code-block {
+        background: #2d2d2d;
+        color: #f8f8f2;
+        padding: 15px;
+        border-radius: 5px;
+        overflow-x: auto;
+        margin-top: 10px;
+        font-family: "Courier New", monospace;
+        font-size: 0.95em;
+        line-height: 1.5;
+      }
+
+      .code-label {
+        font-size: 0.85em;
+        color: #999;
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
+
+      .note {
+        background: #e7f3ff;
+        border-left: 4px solid #2196f3;
+        padding: 15px;
+        margin-top: 10px;
+        border-radius: 3px;
+        color: #0d47a1;
+      }
+
+      .tip {
+        background: #f1f8e9;
+        border-left: 4px solid #4caf50;
+        padding: 15px;
+        margin-top: 10px;
+        border-radius: 3px;
+        color: #33691e;
+      }
+
+      .warning {
+        background: #fff3e0;
+        border-left: 4px solid #ff9800;
+        padding: 15px;
+        margin-top: 10px;
+        border-radius: 3px;
+        color: #e65100;
+      }
+
+      .method-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 15px;
+        background: white;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        overflow: hidden;
+      }
+
+      .method-table th {
+        background: #ff006e;
+        color: white;
+        padding: 12px;
+        text-align: left;
+        font-weight: bold;
+      }
+
+      .method-table td {
+        padding: 12px;
+        border-bottom: 1px solid #eee;
+      }
+
+      .method-table tr:hover {
+        background: #f8f9fa;
+      }
+
+      .method-table code {
+        background: #f0f0f0;
+        padding: 3px 6px;
+        border-radius: 3px;
+        font-family: "Courier New", monospace;
+        color: #d60093;
+      }
+
+      footer {
+        background: #f0f0f0;
+        padding: 20px;
+        text-align: center;
+        color: #666;
+        border-top: 1px solid #ddd;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+        margin-top: 20px;
+      }
+
+      .grid-item {
+        background: white;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        padding: 20px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+      }
+
+      .grid-item h4 {
+        color: #ff006e;
+        margin-bottom: 10px;
+      }
+
+      .grid-item code {
+        background: #f0f0f0;
+        padding: 2px 5px;
+        border-radius: 3px;
+        font-family: "Courier New", monospace;
+      }
+
+      .toc {
+        background: #ff006e;
+        border-radius: 8px;
+        padding: 30px;
+        color: white;
+        margin-bottom: 50px;
+      }
+
+      .toc h2 {
+        color: white;
+        border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+      }
+
+      .toc ul {
+        list-style: none;
+      }
+
+      .toc li {
+        padding: 8px 0;
+        font-size: 0.95em;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>🎨 Tailwind CSS Cheat Sheet</h1>
+        <p>A Beginner-Friendly Guide to Tailwind CSS Utility Classes</p>
+      </header>
+
+      <div class="content">
+        <!-- Table of Contents -->
+        <div class="toc">
+          <h2>📋 Table of Contents</h2>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+              gap: 20px;
+            "
+          >
+            <div>
+              <ul>
+                <li>• Spacing (Margin & Padding)</li>
+                <li>• Sizing (Width & Height)</li>
+                <li>• Display & Layout</li>
+                <li>• Typography (Text Styles)</li>
+                <li>• Colors & Backgrounds</li>
+                <li>• Borders & Shadows</li>
+              </ul>
+            </div>
+            <div>
+              <ul>
+                <li>• Flexbox</li>
+                <li>• Grid</li>
+                <li>• Effects & Transforms</li>
+                <li>• Responsive Design</li>
+                <li>• Hover & Interactive States</li>
+                <li>• Common Patterns</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION 1: Spacing -->
+        <div class="section">
+          <h2>🔲 Spacing (Margin & Padding)</h2>
+
+          <div class="concept">
+            <h3>Margin (Space Outside)</h3>
+            <p>
+              Margin creates space outside an element - between it and other
+              elements.
+            </p>
+            <div class="code-block">
+              m-0, m-1, m-2, m-4, m-6, m-8, m-10, m-12, m-14, m-16, m-20, m-24,
+              m-28, m-32 mt-4 mb-8 ml-2 mr-6 // top, bottom, left, right mx-auto
+              my-4 // horizontal, vertical mx-2 my-6 // x-axis (left+right),
+              y-axis (top+bottom)
+            </div>
+            <div class="tip">
+              <strong>Quick Tip:</strong> m-4 = margin on all sides | mt-4 =
+              margin top only | mx-auto = centers element horizontally
+            </div>
+            <div class="note">
+              <strong>Remember:</strong> Each unit = 0.25rem (4 pixels) → m-4 =
+              1rem = 16px
+            </div>
+          </div>
+
+          <div class="concept">
+            <h3>Padding (Space Inside)</h3>
+            <p>
+              Padding creates space inside an element - between the content and
+              the border.
+            </p>
+            <div class="code-block">
+              p-0, p-1, p-2, p-4, p-6, p-8, p-10, p-12, p-14, p-16, p-20, p-24,
+              p-28, p-32 pt-4 pb-8 pl-2 pr-6 // top, bottom, left, right px-6
+              py-4 // x-axis (left+right), y-axis (top+bottom)
+            </div>
+            <div class="tip">
+              <strong>Quick Tip:</strong> p-4 = padding all sides | pb-8 =
+              padding bottom | px-6 = left and right padding
+            </div>
+          </div>
+
+          <div class="concept">
+            <h3>Gap (Space Between Items)</h3>
+            <p>Gap creates even spacing between flex or grid items.</p>
+            <div class="code-block">
+              gap-0, gap-1, gap-2, gap-3, gap-4, gap-6, gap-8, gap-10, gap-12,
+              gap-14, gap-16, gap-20, gap-24 gap-x-4 gap-y-8 // horizontal gap,
+              vertical gap
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION 2: Sizing -->
+        <div class="section">
+          <h2>📏 Sizing (Width & Height)</h2>
+
+          <div class="concept">
+            <h3>Width</h3>
+            <div class="code-block">
+              w-auto, w-full // auto size, 100% width w-screen // full viewport
+              width w-1/2, w-1/3, w-1/4, w-2/3 // fractions (50%, 33%, 25%, 66%)
+              w-12, w-16, w-20, w-24, w-32, w-40, w-48, w-56, w-64, w-72, w-80,
+              w-96 max-w-sm, max-w-md, max-w-lg, max-w-xl, max-w-2xl, max-w-3xl,
+              max-w-4xl max-w-full, max-w-prose
+            </div>
+            <div class="tip">
+              <strong>Pro Tip:</strong> max-w-4xl is perfect for readability -
+              it limits text width on large screens!
+            </div>
+          </div>
+
+          <div class="concept">
+            <h3>Height</h3>
+            <div class="code-block">
+              h-auto, h-full // auto size, 100% of parent h-screen // 100% of
+              viewport height h-12, h-16, h-20, h-24, h-32, h-40, h-48, h-56,
+              h-64, h-80, h-96 min-h-screen // minimum height of viewport
+              min-h-full // minimum 100% height max-h-64, max-h-96 // maximum
+              heights
+            </div>
+          </div>
+
+          <div class="concept">
+            <h3>Aspect Ratio</h3>
+            <div class="code-block">
+              aspect-auto, aspect-square, aspect-video aspect-[1/1],
+              aspect-[4/3], aspect-[16/9], aspect-[3/2]
+            </div>
+            <div class="note">
+              <strong>Use Case:</strong> Great for images and videos that need
+              to maintain proportion!
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION 3: Display & Layout -->
+        <div class="section">
+          <h2>🎯 Display & Layout</h2>
+
+          <div class="concept">
+            <h3>Display Types</h3>
+            <div class="code-block">
+              block // takes full width, new line inline // flows with text
+              inline-block // inline but accepts width/height hidden // display:
+              none (hidden) flex // flexbox layout grid // grid layout
+            </div>
+          </div>
+
+          <div class="concept">
+            <h3>Position</h3>
+            <div class="code-block">
+              static // default - normal flow relative // positioned relative to
+              normal spot absolute // positioned relative to parent fixed //
+              positioned relative to viewport (stays when scrolling) sticky //
+              stays when scrolling past it top-0, bottom-0, left-0, right-0 //
+              positioning offsets inset-0 // all sides = 0 (fills parent)
+            </div>
+          </div>
+
+          <div class="concept">
+            <h3>Overflow & Visibility</h3>
+            <div class="code-block">
+              overflow-visible // default - content shows outside
+              overflow-hidden // cuts off content that doesn't fit overflow-auto
+              // scrollbar only if needed overflow-x-auto, overflow-y-auto //
+              scroll on specific axis visible, invisible, hidden // visibility
+              options
+            </div>
+          </div>
+
+          <div class="concept">
+            <h3>Z-index (Layering)</h3>
+            <div class="code-block">
+              z-0, z-10, z-20, z-30, z-40, z-50 z-auto // auto z-index
+            </div>
+            <div class="tip">
+              <strong>Note:</strong> Higher number = appears on top. Use for
+              modals, dropdowns, floating elements!
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION 4: Typography -->
+        <div class="section">
+          <h2>✍️ Typography (Text Styles)</h2>
+
+          <div class="concept">
+            <h3>Font Size</h3>
+            <div class="code-block">
+              text-xs text-sm text-base text-lg text-xl text-2xl text-3xl
+              text-4xl text-5xl text-6xl text-7xl text-8xl text-9xl // Actual
+              sizes: text-xs // 0.75rem (12px) text-base // 1rem (16px) text-lg
+              // 1.125rem (18px) text-2xl // 1.5rem (24px) text-4xl // 2.25rem
+              (36px)
+            </div>
+          </div>
+
+          <div class="concept">
+            <h3>Font Weight & Style</h3>
+            <div class="code-block">
+              font-thin font-extralight font-light font-normal font-medium
+              font-semibold font-bold font-extrabold font-black italic
+              not-italic // Slanted text underline no-underline line-through //
+              Decoration uppercase lowercase capitalize normal-case
+            </div>
+          </div>
+
+          <div class="concept">
+            <h3>Line Height & Letter Spacing</h3>
+            <div class="code-block">
+              leading-none leading-tight leading-snug leading-normal
+              leading-relaxed leading-loose tracking-tighter tracking-tight
+              tracking-normal tracking-wide tracking-wider tracking-widest
+            </div>
+          </div>
+
+          <div class="concept">
+            <h3>Text Alignment</h3>
+            <div class="code-block">
+              text-left text-center text-right text-justify
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION 5: Colors & Backgrounds -->
+        <div class="section">
+          <h2>🎨 Colors & Backgrounds</h2>
+
+          <div class="concept">
+            <h3>Text Color</h3>
+            <div class="code-block">
+              text-slate-500 text-gray-600 text-zinc-700 text-red-500
+              text-orange-400 text-yellow-300 text-green-600 text-blue-500
+              text-purple-700 text-pink-400 text-rose-500 // Shades: 50
+              (lightest) → 950 (darkest) text-blue-50 text-blue-100
+              text-blue-200 text-blue-300 text-blue-400 text-blue-500
+              text-blue-600 text-blue-700 text-blue-800 text-blue-900
+            </div>
+            <div class="note">
+              <strong>Color Names:</strong> slate, gray, zinc, neutral, stone,
+              red, orange, amber, yellow, lime, green, emerald, teal, cyan,
+              blue, indigo, violet, purple, fuchsia, pink, rose
+            </div>
+          </div>
+
+          <div class="concept">
+            <h3>Background Color</h3>
+            <div class="code-block">
+              bg-white bg-gray-100 bg-slate-200 bg-blue-50 bg-blue-100
+              bg-blue-500 bg-blue-900 bg-red-400 bg-green-600 bg-purple-700
+              bg-transparent bg-black
+            </div>
+          </div>
+
+          <div class="concept">
+            <h3>Opacity (Transparency)</h3>
+            <div class="code-block">
+              opacity-0 opacity-25 opacity-50 opacity-75 opacity-100
+              bg-blue-500/50 // 50% transparent background text-gray-600/75 //
+              75% opaque text
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION 6: Borders & Shadows -->
+        <div class="section">
+          <h2>🖼️ Borders & Shadows</h2>
+
+          <div class="concept">
+            <h3>Border</h3>
+            <div class="code-block">
+              border // 1px border all sides border-2 // 2px border border-4,
+              border-8 // thicker borders border-t, border-b, border-l, border-r
+              // specific sides border-gray-300 // color of border
+              border-blue-500 // blue border border-slate-200 // light gray
+              border
+            </div>
+          </div>
+
+          <div class="concept">
+            <h3>Rounded Corners</h3>
+            <div class="code-block">
+              rounded // 0.25rem border radius rounded-sm // 0.125rem rounded-md
+              // 0.375rem rounded-lg // 0.5rem (MOST COMMON!) rounded-xl //
+              0.75rem rounded-2xl // 1rem rounded-full // 9999px (perfect
+              circles!) rounded-t, rounded-b, rounded-l, rounded-r // specific
+              corners rounded-tl-lg, rounded-br-xl // individual corners
+            </div>
+            <div class="tip">
+              <strong>Pro Tip:</strong> rounded-lg is the modern standard for
+              most elements!
+            </div>
+          </div>
+
+          <div class="concept">
+            <h3>Shadow</h3>
+            <div class="code-block">
+              shadow-sm // small, subtle shadow shadow // default shadow
+              shadow-md // medium shadow shadow-lg // large shadow shadow-xl //
+              extra large shadow shadow-2xl // massive shadow shadow-inner //
+              shadow inside element shadow-none // no shadow
+            </div>
+            <div class="tip">
+              <strong>Use Case:</strong> Creates depth and draws attention to
+              important elements!
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION 7: Flexbox -->
+        <div class="section">
+          <h2>📦 Flexbox</h2>
+
+          <div class="concept">
+            <h3>Flex Container</h3>
+            <div class="code-block">
+              flex // enables flexbox layout flex-row // items left to right
+              (default) flex-col // items top to bottom flex-row-reverse //
+              right to left flex-col-reverse // bottom to top flex-wrap // items
+              wrap to next line if needed flex-nowrap // items stay on one line
+            </div>
+          </div>
+
+          <div class="concept">
+            <h3>Justify Content (Horizontal Alignment)</h3>
+            <div class="code-block">
+              justify-start // items at start (left) justify-center // items
+              centered justify-end // items at end (right) justify-between //
+              space between items justify-around // space around items
+              justify-evenly // equal space everywhere
+            </div>
+          </div>
+
+          <div class="concept">
+            <h3>Align Items (Vertical Alignment)</h3>
+            <div class="code-block">
+              items-start // items at top items-center // items centered
+              vertically items-end // items at bottom items-baseline // align
+              text baselines items-stretch // items stretch to fill height
+            </div>
+            <div class="warning">
+              <strong>Magic Combo:</strong> flex justify-center items-center =
+              PERFECT CENTERING both ways!
+            </div>
+          </div>
+
+          <div class="concept">
+            <h3>Flex Items</h3>
+            <div class="code-block">
+              flex-1 // takes equal space (MOST USEFUL!) flex-auto // takes
+              space (different than flex-1) flex-initial // doesn't grow,
+              shrinks if needed flex-none // doesn't grow or shrink
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION 8: Grid -->
+        <div class="section">
+          <h2>⚙️ Grid</h2>
+
+          <div class="concept">
+            <h3>Grid Container</h3>
+            <div class="code-block">
+              grid // enables grid layout grid-cols-1 // 1 column grid-cols-2 //
+              2 columns grid-cols-3 // 3 columns grid-cols-4, grid-cols-5,
+              grid-cols-6, grid-cols-12 grid-rows-1, grid-rows-3, grid-rows-6 //
+              rows
+            </div>
+          </div>
+
+          <div class="concept">
+            <h3>Responsive Grid (MOBILE-FIRST!)</h3>
+            <div class="code-block">
+              grid-cols-1 // 1 column on mobile md:grid-cols-2 // 2 columns on
+              medium screens lg:grid-cols-3 // 3 columns on large screens
+              xl:grid-cols-4 // 4 columns on extra large screens // Complete
+              responsive example: grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3
+              xl:grid-cols-4 gap-6
+            </div>
+            <div class="tip">
+              <strong>Best Practice:</strong> Always design mobile-first (start
+              with 1 column), then expand for larger screens!
+            </div>
+          </div>
+
+          <div class="concept">
+            <h3>Grid Items (Spanning)</h3>
+            <div class="code-block">
+              col-span-1 // spans 1 column col-span-2 // spans 2 columns
+              col-span-3, col-span-4, col-span-12 // spans multiple columns
+              row-span-2, row-span-3 // spans multiple rows
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION 9: Effects & Transforms -->
+        <div class="section">
+          <h2>✨ Effects & Transforms</h2>
+
+          <div class="concept">
+            <h3>Transform Scale (Zoom)</h3>
+            <div class="code-block">
+              scale-50 // 50% size scale-75 // 75% size scale-100 // normal size
+              scale-110 // 110% size scale-125, scale-150 // larger
+              hover:scale-105 // slightly bigger on hover
+            </div>
+          </div>
+
+          <div class="concept">
+            <h3>Transform Rotate</h3>
+            <div class="code-block">
+              rotate-0 // no rotation rotate-45 // 45 degree rotation rotate-90,
+              rotate-180 // 90 degrees, 180 degrees -rotate-45 // -45 degrees
+              (counter-clockwise)
+            </div>
+          </div>
+
+          <div class="concept">
+            <h3>Transition (Animation Smoothness)</h3>
+            <div class="code-block">
+              transition // smooth transition on hover transition-all //
+              transitions all properties transition-colors // only color
+              transitions smooth transition-transform // only transform
+              transitions smooth duration-150, duration-300, duration-500,
+              duration-1000 // milliseconds ease-linear // constant speed
+              ease-in, ease-out // start/end slow ease-in-out // slow start and
+              end
+            </div>
+            <div class="tip">
+              <strong>Pro Combo:</strong> transition-all duration-300
+              hover:scale-110 = smooth professional hover effect!
+            </div>
+          </div>
+
+          <div class="concept">
+            <h3>Built-in Animations</h3>
+            <div class="code-block">
+              animate-spin // rotation animation animate-ping // grows and fades
+              (like radar ping) animate-pulse // fades in and out animate-bounce
+              // bounces up and down animate-none // no animation
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION 10: Responsive Design -->
+        <div class="section">
+          <h2>📱 Responsive Design</h2>
+
+          <div class="concept">
+            <h3>Breakpoints (Screen Sizes)</h3>
+            <div class="code-block">
+              sm 640px // small phones and tablets md 768px // larger tablets lg
+              1024px // small laptops xl 1280px // normal desktops 2xl 1536px //
+              large monitors // Backwards: not at this breakpoint and down
+              max-sm // smaller than sm max-md // smaller than md
+            </div>
+          </div>
+
+          <div class="concept">
+            <h3>Common Responsive Patterns</h3>
+            <div class="code-block">
+              // Responsive grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 //
+              Responsive text size text-sm md:text-base lg:text-lg // Responsive
+              padding p-4 md:p-6 lg:p-8 // Hide/show at breakpoints hidden
+              md:block // hidden until medium screen block md:hidden // hidden
+              from medium up // Responsive flex direction flex-col md:flex-row
+              // column on mobile, row on desktop
+            </div>
+            <div class="tip">
+              <strong>Key Rule:</strong> Use prefixes (sm:, md:, lg:, xl:, 2xl:)
+              on ANY class to make it responsive!
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION 11: Hover & Interactive States -->
+        <div class="section">
+          <h2>🎯 Hover & Interactive States</h2>
+
+          <div class="concept">
+            <h3>Hover States</h3>
+            <div class="code-block">
+              hover:bg-blue-600 // changes background on hover hover:text-white
+              // changes text color on hover hover:scale-105 // slightly grows
+              on hover hover:shadow-lg // adds shadow on hover hover:underline
+              // adds underline on hover hover:no-underline // removes underline
+              on hover
+            </div>
+          </div>
+
+          <div class="concept">
+            <h3>Focus States (For Inputs)</h3>
+            <div class="code-block">
+              focus:outline-none // removes outline focus:ring-2 // adds colored
+              ring focus:ring-blue-500 // ring color focus:bg-white // changes
+              background when focused // Example on input: focus:border-blue-500
+              focus:ring-2 focus:ring-blue-200
+            </div>
+            <div class="note">
+              <strong>Accessibility:</strong> Always show focus state for
+              keyboard users!
+            </div>
+          </div>
+
+          <div class="concept">
+            <h3>Other States</h3>
+            <div class="code-block">
+              active:scale-95 // when being clicked disabled:opacity-50 // when
+              disabled group-hover:text-white // child reacts to parent hover
+              first:border-t-0 // first item in list last:border-b-0 // last
+              item in list
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION 12: Common Patterns -->
+        <div class="section">
+          <h2>💡 Common Patterns & Combinations</h2>
+
+          <div class="grid">
+            <div class="grid-item">
+              <h4>Centered Container</h4>
+              <div class="code-block">
+                flex justify-center items-center h-screen OR max-w-4xl mx-auto
+                px-4
+              </div>
+            </div>
+
+            <div class="grid-item">
+              <h4>Card Pattern</h4>
+              <div class="code-block">
+                bg-white rounded-lg shadow-md p-6 border border-gray-200
+                transition hover:shadow-lg hover:scale-105
+              </div>
+            </div>
+
+            <div class="grid-item">
+              <h4>Button Pattern</h4>
+              <div class="code-block">
+                bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600
+                transition
+              </div>
+            </div>
+
+            <div class="grid-item">
+              <h4>Navigation Header</h4>
+              <div class="code-block">
+                bg-white shadow max-w-6xl mx-auto px-4 py-4 flex justify-between
+                items-center
+              </div>
+            </div>
+
+            <div class="grid-item">
+              <h4>Image Gallery</h4>
+              <div class="code-block">
+                grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6
+              </div>
+            </div>
+
+            <div class="grid-item">
+              <h4>Form Input</h4>
+              <div class="code-block">
+                w-full border border-gray-300 rounded-lg px-4 py-2
+                focus:outline-none focus:ring-2 focus:ring-blue-500
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tips Section -->
+        <div class="section">
+          <h2>🌟 Tips for Beginners</h2>
+
+          <div class="tip">
+            <strong>1. Start with Common Classes</strong><br />
+            Focus on: p-, m-, w-, h-, bg-, text-, rounded-, shadow-, flex, grid,
+            gap. These handle 80% of styling!
+          </div>
+
+          <div class="tip">
+            <strong>2. Mobile-First Approach</strong><br />
+            Always design mobile first (no prefix), then add breakpoints (sm:,
+            md:, lg:) for larger screens.
+          </div>
+
+          <div class="tip">
+            <strong>3. Use Browser DevTools</strong><br />
+            Inspect elements to see which classes are applied. This helps you
+            learn and debug!
+          </div>
+
+          <div class="tip">
+            <strong>4. Check Official Docs</strong><br />
+            Tailwind CSS docs are amazing! Visit tailwindcss.com for complete
+            reference.
+          </div>
+
+          <div class="warning">
+            <strong>Common Mistake:</strong> Not using responsive prefixes.
+            Always test your design on mobile, tablet, and desktop!
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <p>
+          Happy styling! Remember, Tailwind is just utility classes - the more
+          you use it, the faster you'll build! 🚀
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>
